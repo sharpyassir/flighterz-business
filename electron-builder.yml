@@ -14,9 +14,9 @@ files:
 win:
   target:
     - nsis
-  # Add build/icon.ico (256x256 multi-res) for a branded installer + app icon,
-  # then uncomment the next line. Without it, Electron's default icon is used.
-  # icon: build/icon.ico
+  # Flighterz F app icon (electron-builder converts this 1254px PNG to a
+  # multi-res .ico for the exe, taskbar and installer).
+  icon: build/icon.png
 
 # Install-wizard behaviour (the common Windows way).
 nsis:
