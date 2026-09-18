@@ -1,0 +1,36 @@
+appId: com.flighterz.business
+productName: Flighterz Business
+copyright: © Middle East Marina Company
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**
+  - electron/**
+  - package.json
+
+win:
+  target:
+    - nsis
+  # Add build/icon.ico (256x256 multi-res) for a branded installer + app icon,
+  # then uncomment the next line. Without it, Electron's default icon is used.
+  # icon: build/icon.ico
+
+# Install-wizard behaviour (the common Windows way).
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Flighterz Business
+
+# Auto-update feed. electron-updater reads latest.yml + the installer from this
+# URL; publishing a newer version there makes clients update automatically.
+# Point `url` at where you host releases (e.g. the website or object storage),
+# then `npm run dist -- --publish always` uploads there (or upload manually).
+publish:
+  - provider: generic
+    url: https://downloads.flighterz.com/business/
