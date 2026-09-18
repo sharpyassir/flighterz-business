@@ -27,10 +27,12 @@ nsis:
   createStartMenuShortcut: true
   shortcutName: Flighterz Business
 
-# Auto-update feed. electron-updater reads latest.yml + the installer from this
-# URL; publishing a newer version there makes clients update automatically.
-# Point `url` at where you host releases (e.g. the website or object storage),
-# then `npm run dist -- --publish always` uploads there (or upload manually).
+# Auto-update via GitHub Releases. The app checks this repo's Releases on launch
+# and updates itself. Use a PUBLIC repo so clients can download without a token.
+# Publish a release with:  GH_TOKEN=<token> npm run dist -- --publish always
+# (or upload latest.yml + the .exe + .exe.blockmap to a Release manually).
 publish:
-  - provider: generic
-    url: https://downloads.flighterz.com/business/
+  - provider: github
+    owner: sharpyassir
+    repo: flighterz-business
+    releaseType: release

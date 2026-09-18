@@ -57,15 +57,31 @@ menu shortcuts). Output lands in `release/`.
   `.pfx`) and `CSC_KEY_PASSWORD` env vars before `npm run dist`; electron-builder
   signs automatically. Unsigned builds trigger a SmartScreen warning on first run.
 
-## Automatic updates
+## Automatic updates (GitHub Releases)
 
-The app self-updates via `electron-updater`. On launch it checks the feed in
-`electron-builder.yml` (`publish.url`), downloads a newer build in the background,
-and installs it on next quit. To ship an update: bump `version` in `package.json`,
-run `npm run dist`, and upload `release/latest.yml` + the new installer to that URL
-(or `npm run dist -- --publish always` to upload automatically). Clients update on
-their own — no manual reinstall. (Signed builds are strongly recommended so the
-update is trusted; see code signing below.)
+The app self-updates via `electron-updater`, checking **GitHub Releases** of the
+**public** repo `sharpyassir/flighterz-business` (set in `electron-builder.yml`).
+On launch it looks for a newer release, downloads it in the background, and
+installs on next quit — no manual reinstall.
+
+**One-time setup:** create the public repo `sharpyassir/flighterz-business` on
+GitHub (it only needs to hold releases — no source required).
+
+**To ship an update:**
+1. Bump `version` in `package.json`.
+2. Build + publish in one step:
+   ```bash
+   GH_TOKEN=<github-token-with-repo-scope> npm run dist -- --publish always
+   ```
+   That builds the installer and creates a GitHub Release with `latest.yml`, the
+   `.exe`, and the `.exe.blockmap`.
+   **Or** manually: `npm run dist`, then create a Release on the repo and upload
+   those three files from `release/`.
+3. Every installed app updates itself on next launch.
+
+> The **first** version carrying this config must be installed manually; every
+> version after that auto-updates. Signed builds (see code signing) make the
+> auto-update trusted so Windows installs it without a SmartScreen prompt.
 
 ## Hosting the download
 
