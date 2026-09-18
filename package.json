@@ -1,7 +1,7 @@
 {
   "name": "flighterz-business",
   "productName": "Flighterz Business",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Flighterz Business — corporate travel desktop app (bookings, analytics, approval policies, employee tree).",
   "author": "Middle East Marina Company",
   "private": true,

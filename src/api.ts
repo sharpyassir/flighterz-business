@@ -57,6 +57,46 @@ export const otpRequest = (email: string, password: string, locale: "en" | "ar" 
 export const otpVerify = (email: string, code: string, otpToken: string) =>
   post<{ ok: true; token: string; company: Company }>("/corporate/otp/verify", { email, code, otpToken });
 
+/** Passwordless demo access (allowlisted emails only) → token + demo company. */
+export const demoLogin = (email: string) =>
+  post<{ ok: true; token: string; company: Company }>("/corporate/demo", { email });
+
+export type FlightResult = {
+  id: string;
+  airlineCode: string;
+  airlineEn: string;
+  airlineAr: string;
+  dep: string;
+  arr: string;
+  dayOffset: number;
+  durationMins: number;
+  stops: number;
+  viaCode: string | null;
+  refundable: boolean;
+  seatsLeft: number;
+  base: number;
+  serviceCharge: number;
+  total: number;
+  currency: string;
+};
+
+/** In-app flight search (same engine as the website). */
+export async function searchFlights(params: {
+  from: string;
+  to: string;
+  depart?: string;
+  returnDate?: string;
+  adults?: number;
+}): Promise<FlightResult[]> {
+  const q = new URLSearchParams({ from: params.from, to: params.to, adults: String(params.adults ?? 1) });
+  if (params.depart) q.set("depart", params.depart);
+  if (params.returnDate) q.set("return", params.returnDate);
+  const res = await fetch(`${BASE}/flights/search?${q.toString()}`);
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok || (json as { ok?: boolean }).ok === false) throw new Error("search failed");
+  return (json as { flights: FlightResult[] }).flights;
+}
+
 /** Signed-in company profile + recent wallet ledger. */
 export const getAccount = (token: string) =>
   get<{ ok: true; company: Company; ledger: LedgerEntry[] }>("/corporate/account", token);

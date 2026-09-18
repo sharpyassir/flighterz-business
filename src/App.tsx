@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import logoLight from "./assets/logo-light.png";
-import { otpRequest, otpVerify, getAccount, type Company, type LedgerEntry } from "./api";
+import { otpRequest, otpVerify, demoLogin, getAccount, type Company, type LedgerEntry } from "./api";
 import { Dashboard } from "./screens/Dashboard";
 import { Bookings } from "./screens/Bookings";
 import { Approvals } from "./screens/Approvals";
@@ -129,6 +129,20 @@ function Login({ onAuthed }: { onAuthed: (token: string, company: Company) => vo
     }
   };
 
+  const enterDemo = async () => {
+    setError(null);
+    setBusy(true);
+    try {
+      const res = await demoLogin((email.trim() || "yassir@flighterz.com").toLowerCase());
+      onAuthed(res.token, res.company);
+    } catch (err) {
+      const m = (err as Error).message;
+      setError(m === "not_allowed" ? "Demo access isn't enabled for this email." : errText(m));
+    } finally {
+      setBusy(false);
+    }
+  };
+
   return (
     <div className="login-wrap">
       <div className="login-card">
@@ -148,6 +162,9 @@ function Login({ onAuthed }: { onAuthed: (token: string, company: Company) => vo
             </label>
             <button className="btn" disabled={busy}>
               {busy ? "…" : "Continue"}
+            </button>
+            <button type="button" className="btn ghost" onClick={enterDemo} disabled={busy}>
+              Explore demo (no password)
             </button>
             <p className="hint">Accounts are created by Flighterz. There is no self-registration.</p>
           </form>
