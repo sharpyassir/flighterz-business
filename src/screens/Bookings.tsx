@@ -1,160 +1,210 @@
 import { useState } from "react";
-import { searchFlights, type FlightResult, type Company } from "../api";
+import {
+  searchFlights,
+  searchStays,
+  searchActivities,
+  searchTransfers,
+  type FlightResult,
+  type StayItem,
+  type ActivityItem,
+  type TransferItem,
+  type Company,
+} from "../api";
 
 const WA = "966580028428";
-
-const dur = (m: number) => `${Math.floor(m / 60)}h ${m % 60}m`;
+const CITIES = ["RUH", "JED", "DMM", "MED", "DXB", "AUH", "DOH", "CAI", "IST", "LHR"];
 const sar = (n: number) => `${n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} SAR`;
+const dur = (m: number) => `${Math.floor(m / 60)}h ${m % 60}m`;
 
-/**
- * In-app corporate flight search — same engine as the website (no browser
- * hand-off). Booking settles against the company wallet/credit; completing a
- * paid booking is enabled at launch (payments gated), so Select routes the
- * request to our team for now.
- */
+type Product = "flights" | "hotels" | "activities" | "transfers";
+
 export function Bookings({ company }: { company: Company }) {
-  const [from, setFrom] = useState("RUH");
-  const [to, setTo] = useState("JED");
-  const [depart, setDepart] = useState("");
-  const [adults, setAdults] = useState(1);
-  const [results, setResults] = useState<FlightResult[] | null>(null);
+  const [product, setProduct] = useState<Product>("flights");
+
+  const tabs: { key: Product; label: string }[] = [
+    { key: "flights", label: "Flights" },
+    { key: "hotels", label: "Hotels" },
+    { key: "activities", label: "Activities" },
+    { key: "transfers", label: "Transfers" },
+  ];
+
+  return (
+    <>
+      <div className="row" style={{ gap: 8, marginBottom: 4 }}>
+        {tabs.map((t) => (
+          <button
+            key={t.key}
+            className="pill-btn"
+            style={product === t.key ? { background: "#0d2138", color: "#fff", borderColor: "#0d2138" } : {}}
+            onClick={() => setProduct(t.key)}
+          >
+            {t.label}
+          </button>
+        ))}
+      </div>
+
+      {product === "flights" && <Flights company={company} />}
+      {product === "hotels" && <Hotels />}
+      {product === "activities" && <Activities />}
+      {product === "transfers" && <Transfers />}
+    </>
+  );
+}
+
+function useSearch<T>(fn: () => Promise<T[]>) {
+  const [items, setItems] = useState<T[] | null>(null);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [picked, setPicked] = useState<FlightResult | null>(null);
-
   const run = async () => {
     setBusy(true);
     setError(null);
-    setPicked(null);
     try {
-      const r = await searchFlights({ from, to, depart: depart || undefined, adults });
-      setResults(r);
+      setItems(await fn());
     } catch {
-      setError("Search failed. Please check the route codes and try again.");
+      setError("Search failed. Please try again.");
     } finally {
       setBusy(false);
     }
   };
+  return { items, busy, error, run };
+}
 
-  const requestBooking = (f: FlightResult) => {
-    const msg = encodeURIComponent(
-      `Corporate booking request — ${company.name} (${company.accountNo})\n` +
-        `${from} → ${to}${depart ? " on " + depart : ""}, ${adults} traveller(s)\n` +
-        `${f.airlineEn} ${f.dep}-${f.arr}, total ${sar(f.total)}`,
-    );
-    window.open(`https://wa.me/${WA}?text=${msg}`, "_blank");
-  };
+const citySelect = (v: string, set: (s: string) => void) => (
+  <select value={v} onChange={(e) => set(e.target.value)}>
+    {CITIES.map((c) => (
+      <option key={c} value={c}>{c}</option>
+    ))}
+  </select>
+);
 
+function Flights({ company }: { company: Company }) {
+  const [from, setFrom] = useState("RUH");
+  const [to, setTo] = useState("JED");
+  const [depart, setDepart] = useState("");
+  const [adults, setAdults] = useState(1);
+  const s = useSearch<FlightResult>(() => searchFlights({ from, to, depart: depart || undefined, adults }));
+  const req = (f: FlightResult) =>
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(`Flight booking — ${company.name}: ${from}→${to}, ${f.airlineEn}, ${sar(f.total)}`)}`, "_blank");
   return (
     <>
       <div className="panel">
-        <h2>Search flights</h2>
+        <h2>Flights</h2>
         <div className="form-grid">
-          <label>
-            <span>From (IATA)</span>
-            <input value={from} onChange={(e) => setFrom(e.target.value.toUpperCase())} maxLength={3} />
-          </label>
-          <label>
-            <span>To (IATA)</span>
-            <input value={to} onChange={(e) => setTo(e.target.value.toUpperCase())} maxLength={3} />
-          </label>
-          <label>
-            <span>Departure</span>
-            <input type="date" value={depart} onChange={(e) => setDepart(e.target.value)} />
-          </label>
-          <label>
-            <span>Travellers</span>
-            <input type="number" min={1} max={9} value={adults} onChange={(e) => setAdults(Number(e.target.value))} />
-          </label>
+          <label><span>From</span>{citySelect(from, setFrom)}</label>
+          <label><span>To</span>{citySelect(to, setTo)}</label>
+          <label><span>Departure</span><input type="date" value={depart} onChange={(e) => setDepart(e.target.value)} /></label>
+          <label><span>Travellers</span><input type="number" min={1} max={9} value={adults} onChange={(e) => setAdults(Number(e.target.value))} /></label>
         </div>
-        <div style={{ marginTop: 14 }}>
-          <button className="pill-btn primary" onClick={run} disabled={busy}>
-            {busy ? "Searching…" : "Search flights"}
-          </button>
-        </div>
-        {error && <p className="small" style={{ color: "#b91c1c", marginTop: 10 }}>{error}</p>}
+        <button className="pill-btn primary" style={{ marginTop: 12 }} onClick={s.run} disabled={s.busy}>{s.busy ? "Searching…" : "Search flights"}</button>
+        {s.error && <p className="small" style={{ color: "#b91c1c" }}>{s.error}</p>}
       </div>
-
-      {results && (
+      {s.items && (
         <div className="panel">
-          <h2>
-            {results.length} result{results.length === 1 ? "" : "s"} · {from} → {to}
-          </h2>
-          {results.length === 0 && <p className="small">No flights found for this route.</p>}
-          <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-            {results.map((f) => (
-              <div
-                key={f.id}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 14,
-                  border: "1px solid var(--line)",
-                  borderRadius: 12,
-                  padding: "12px 14px",
-                }}
-              >
-                <div style={{ width: 140, fontWeight: 800, color: "var(--navy)" }}>{f.airlineEn}</div>
-                <div style={{ flex: 1, display: "flex", alignItems: "center", gap: 10 }}>
-                  <div style={{ fontWeight: 800, fontSize: 16 }}>{f.dep}</div>
-                  <div style={{ flex: 1, textAlign: "center" }} className="small">
-                    {dur(f.durationMins)} · {f.stops === 0 ? "Direct" : `${f.stops} stop · ${f.viaCode ?? ""}`}
-                  </div>
-                  <div style={{ fontWeight: 800, fontSize: 16 }}>
-                    {f.arr}
-                    {f.dayOffset > 0 ? <sup style={{ color: "#e11d48", fontSize: 10 }}>+{f.dayOffset}</sup> : null}
-                  </div>
-                </div>
-                <div style={{ textAlign: "right", minWidth: 120 }}>
-                  <div style={{ fontWeight: 800, fontSize: 16, color: "var(--navy)" }}>{sar(f.total)}</div>
-                  <div className="small">{f.refundable ? "Refundable" : "Non-refundable"} · {f.seatsLeft} left</div>
-                </div>
-                <button className="pill-btn primary" onClick={() => setPicked(f)}>
-                  Select
-                </button>
-              </div>
-            ))}
-          </div>
+          <h2>{s.items.length} results</h2>
+          {s.items.map((f) => (
+            <div key={f.id} className="row" style={{ justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #eef1f5", padding: "8px 0" }}>
+              <b style={{ width: 130 }}>{f.airlineEn}</b>
+              <span className="small">{f.dep}–{f.arr} · {dur(f.durationMins)} · {f.stops === 0 ? "Direct" : `${f.stops} stop`}</span>
+              <b>{sar(f.total)}</b>
+              <button className="pill-btn primary" onClick={() => req(f)}>Request</button>
+            </div>
+          ))}
         </div>
       )}
+    </>
+  );
+}
 
-      {picked && (
-        <div className="panel" style={{ borderColor: "var(--gold)" }}>
-          <h2>Confirm booking</h2>
-          <p className="small">
-            {picked.airlineEn} · {from} → {to} · {picked.dep}–{picked.arr} · {adults} traveller(s)
-          </p>
-          <table style={{ maxWidth: 320 }}>
-            <tbody>
-              <tr><td className="small">Air fare</td><td style={{ textAlign: "right" }}>{sar(picked.base)}</td></tr>
-              <tr><td className="small">Service charge</td><td style={{ textAlign: "right" }}>{sar(picked.serviceCharge)}</td></tr>
-              <tr><td style={{ fontWeight: 800 }}>Total</td><td style={{ textAlign: "right", fontWeight: 800 }}>{sar(picked.total)}</td></tr>
-            </tbody>
-          </table>
-          <p className="small" style={{ margin: "10px 0" }}>
-            Instant online ticketing switches on at launch. For now we issue this booking for you against{" "}
-            {company.name}&apos;s account — send the request and our team confirms within the hour.
-          </p>
-          <div className="row">
-            <button className="pill-btn primary" onClick={() => requestBooking(picked)}>
-              Request booking
-            </button>
-            <button className="pill-btn" onClick={() => setPicked(null)}>
-              Cancel
-            </button>
-          </div>
-        </div>
-      )}
-
+function Hotels() {
+  const [dest, setDest] = useState("DXB");
+  const [cin, setCin] = useState("");
+  const [cout, setCout] = useState("");
+  const s = useSearch<StayItem>(() => searchStays({ dest, in: cin || undefined, out: cout || undefined }));
+  return (
+    <>
       <div className="panel">
-        <h2>Booking capabilities</h2>
-        <ul className="small" style={{ lineHeight: 1.9, margin: 0, paddingInlineStart: 18 }}>
-          <li>Search &amp; book flights within company policy (see Approval policies).</li>
-          <li>Wallet &amp; credit-limit settlement, with the full audit trail.</li>
-          <li>E-ticket + ZATCA invoice emailed automatically to the traveller and account.</li>
-          <li>Cancellation / refund / change requests routed to the Flighterz team.</li>
-        </ul>
+        <h2>Hotels</h2>
+        <div className="form-grid">
+          <label><span>Destination</span>{citySelect(dest, setDest)}</label>
+          <label><span>Check-in</span><input type="date" value={cin} onChange={(e) => setCin(e.target.value)} /></label>
+          <label><span>Check-out</span><input type="date" value={cout} onChange={(e) => setCout(e.target.value)} /></label>
+        </div>
+        <button className="pill-btn primary" style={{ marginTop: 12 }} onClick={s.run} disabled={s.busy}>{s.busy ? "Searching…" : "Search hotels"}</button>
+        {s.error && <p className="small" style={{ color: "#b91c1c" }}>{s.error}</p>}
       </div>
+      {s.items && (
+        <div className="panel">
+          <h2>{s.items.length} hotels</h2>
+          {s.items.map((h) => (
+            <div key={h.id} className="row" style={{ justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #eef1f5", padding: "8px 0" }}>
+              <span><b>{h.name}</b> <span className="small">{"★".repeat(h.category)} · {h.area} · {h.board}</span></span>
+              <b>{sar(h.nightly)} / night</b>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+function Activities() {
+  const [dest, setDest] = useState("DXB");
+  const [date, setDate] = useState("");
+  const s = useSearch<ActivityItem>(() => searchActivities({ dest, date: date || undefined }));
+  return (
+    <>
+      <div className="panel">
+        <h2>Activities</h2>
+        <div className="form-grid">
+          <label><span>Destination</span>{citySelect(dest, setDest)}</label>
+          <label><span>Date</span><input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label>
+        </div>
+        <button className="pill-btn primary" style={{ marginTop: 12 }} onClick={s.run} disabled={s.busy}>{s.busy ? "Searching…" : "Search activities"}</button>
+        {s.error && <p className="small" style={{ color: "#b91c1c" }}>{s.error}</p>}
+      </div>
+      {s.items && (
+        <div className="panel">
+          <h2>{s.items.length} activities</h2>
+          {s.items.map((a) => (
+            <div key={a.id} className="row" style={{ justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #eef1f5", padding: "8px 0" }}>
+              <span><b>{a.name}</b> <span className="small">{a.category} · {a.duration} · ★{a.rating}</span></span>
+              <b>from {sar(a.from)}</b>
+            </div>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}
+
+function Transfers() {
+  const [from, setFrom] = useState("DXB");
+  const [to, setTo] = useState("RUH");
+  const [date, setDate] = useState("");
+  const s = useSearch<TransferItem>(() => searchTransfers({ from, to, date: date || undefined }));
+  return (
+    <>
+      <div className="panel">
+        <h2>Transfers</h2>
+        <div className="form-grid">
+          <label><span>From</span>{citySelect(from, setFrom)}</label>
+          <label><span>To</span>{citySelect(to, setTo)}</label>
+          <label><span>Date</span><input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label>
+        </div>
+        <button className="pill-btn primary" style={{ marginTop: 12 }} onClick={s.run} disabled={s.busy}>{s.busy ? "Searching…" : "Search transfers"}</button>
+        {s.error && <p className="small" style={{ color: "#b91c1c" }}>{s.error}</p>}
+      </div>
+      {s.items && (
+        <div className="panel">
+          <h2>{s.items.length} options</h2>
+          {s.items.map((t) => (
+            <div key={t.id} className="row" style={{ justifyContent: "space-between", alignItems: "center", borderBottom: "1px solid #eef1f5", padding: "8px 0" }}>
+              <span><b>{t.vehicle}</b> <span className="small">{t.type} · {t.maxPax} pax · {t.bags} bags</span></span>
+              <b>{sar(t.price)}</b>
+            </div>
+          ))}
+        </div>
+      )}
     </>
   );
 }

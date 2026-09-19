@@ -80,6 +80,24 @@ export type FlightResult = {
   currency: string;
 };
 
+export type StayItem = { id: string; name: string; category: number; area: string; board: string; refundable: boolean; reviewScore: number; nights: number; nightly: number; total: number; currency: string };
+export type ActivityItem = { id: string; name: string; category: string; duration: string; rating: number; from: number; currency: string };
+export type TransferItem = { id: string; vehicle: string; type: string; maxPax: number; bags: number; minutes: number; price: number; currency: string };
+
+async function getItems<T>(path: string): Promise<T[]> {
+  const res = await fetch(`${BASE}${path}`);
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok || (json as { ok?: boolean }).ok === false) throw new Error("search failed");
+  return (json as { items: T[] }).items;
+}
+
+export const searchStays = (p: { dest: string; in?: string; out?: string; rooms?: number; adults?: number }) =>
+  getItems<StayItem>(`/stays/search?${new URLSearchParams({ dest: p.dest, in: p.in ?? "", out: p.out ?? "", rooms: String(p.rooms ?? 1), adults: String(p.adults ?? 2) })}`);
+export const searchActivities = (p: { dest: string; date?: string; adults?: number }) =>
+  getItems<ActivityItem>(`/activities/search?${new URLSearchParams({ dest: p.dest, date: p.date ?? "", adults: String(p.adults ?? 2) })}`);
+export const searchTransfers = (p: { from: string; to: string; date?: string; adults?: number }) =>
+  getItems<TransferItem>(`/transfers/search?${new URLSearchParams({ from: p.from, to: p.to, date: p.date ?? "", adults: String(p.adults ?? 2) })}`);
+
 /** In-app flight search (same engine as the website). */
 export async function searchFlights(params: {
   from: string;
