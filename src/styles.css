@@ -42,7 +42,10 @@ button { font-family: inherit; cursor: pointer; }
 .login-wrap { min-height: 100%; display: grid; place-items: center; background: var(--navy); padding: 24px; }
 .login-card { width: 380px; max-width: 100%; background: #fff; border-radius: 18px; padding: 28px; box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
 .login-card img { height: 40px; display: block; margin: 0 auto 6px; }
+.login-card .title { text-align: center; color: var(--navy); font-weight: 800; font-size: 15px; margin: 6px 0 2px; }
 .login-card .sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+.login-card .hint a { color: var(--navy); font-weight: 700; text-decoration: none; }
+.login-card .hint a:hover { text-decoration: underline; }
 .field { display: block; margin-bottom: 14px; }
 .field span { display: block; font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
 .field input {

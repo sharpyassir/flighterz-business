@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import logoLight from "./assets/logo-light.png";
+import logoDark from "./assets/logo-dark.png";
 import { otpRequest, otpVerify, demoLogin, getAccount, type Company, type LedgerEntry } from "./api";
 import { Dashboard } from "./screens/Dashboard";
 import { Bookings } from "./screens/Bookings";
@@ -146,8 +147,9 @@ function Login({ onAuthed }: { onAuthed: (token: string, company: Company) => vo
   return (
     <div className="login-wrap">
       <div className="login-card">
-        <img src={logoLight} alt="Flighterz" style={{ filter: "invert(1)" }} />
-        <p className="sub">Intelligent Business Platform — corporate sign in</p>
+        <img src={logoDark} alt="Flighterz" />
+        <p className="title">Intelligent Business Platform</p>
+        <p className="sub">Please sign in</p>
         {error && <div className="error">{error}</div>}
 
         {step === "creds" ? (
@@ -166,7 +168,12 @@ function Login({ onAuthed }: { onAuthed: (token: string, company: Company) => vo
             <button type="button" className="btn ghost" onClick={enterDemo} disabled={busy}>
               Explore demo (no password)
             </button>
-            <p className="hint">Accounts are created by Flighterz. There is no self-registration.</p>
+            <p className="hint">
+              For registration please visit{" "}
+              <a href="https://www.flighterz.com" target="_blank" rel="noreferrer">
+                www.flighterz.com
+              </a>
+            </p>
           </form>
         ) : (
           <form onSubmit={submitOtp}>
