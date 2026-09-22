@@ -1,45 +1,54 @@
-# Flighterz — Intelligent Business Platform (desktop)
+# Flighterz Business (desktop)
 
-A Windows desktop app for **corporate accounts**: booking, analytics, travel
-approval policies, and an employee tree. It is a client of the **same Flighterz
-backend** as the website and the mobile apps — it authenticates against, and
-reads/writes through, the existing `/api/mobile/corporate/*` endpoints. No new
-parallel system.
+A Windows desktop app for **corporate accounts**. As of v0.2.0 it is a **branded,
+auto-updating shell around the live Flighterz corporate portal**
+(`https://www.flighterz.com/en/corporate`). The desktop app therefore *is* the web
+portal — every screen (Command Center, Book, Requests & approvals, Trips,
+Bookings, Wallet, Budgets, Billing, Statement, Employees, Policies, Company setup)
+is always identical to the website, and **every web deploy reflects instantly on
+every user's PC** with no reinstall.
 
-- **Launch splash:** navy (`#0D2138`, the website blue) with the logo centered and
-  **"Flighterz Intelligent Business Platform"** beneath it.
-- **Login only, no registration.** Accounts are created on the website; sign-in is
-  **email + password → email OTP** (the `/api/mobile/corporate/otp/*` flow).
-- **Analytics:** live wallet/credit KPIs, monthly travel spend, credit utilisation,
-  balance trend, and recent activity — read from the corporate account (same data
-  as the web portal), charted with Recharts.
-- **Bookings:** launches the same Flighterz booking engine (fares, PNR/ticketing,
-  wallet/credit settlement, e-ticket + ZATCA invoice).
-- **Approval policies:** define when a trip needs sign-off — **day/time window,
-  route (from → to), and reason ("why")** — and who approves it. Bookings are
-  **never held**; the policy asks for a reason and notifies the approver.
-- **Employee tree:** the org hierarchy that drives approvals (X approves for Y, Y
-  senior to Z …).
+Why a shell instead of native screens: the corporate portal is a rich,
+fast-moving app (policy engine, approval workflows, budgets, analytics…).
+Re-implementing it natively would mean a second parallel codebase that perpetually
+drifts. Loading the live portal guarantees true, permanent equivalence.
+
+- **Launch update-gate:** on start the app shows a navy splash, checks GitHub
+  Releases for a newer shell, and — if found — downloads and installs it **before**
+  loading the portal. If the feed is slow/offline (or in dev) it proceeds after a
+  short timeout so startup is never blocked.
+- **Login:** handled by the portal itself (email + access code). The session
+  cookie persists between launches (standard Electron session storage).
+- **External links** (e.g. a PDF, the public site) open in the OS browser; portal
+  navigation stays in-app.
+- **Offline screen** with a "Try again" button when the portal can't be reached.
+
+## Two kinds of "update" — important
+
+| You changed… | How it reaches users | Action needed |
+|---|---|---|
+| A **portal feature** (any screen, the policy engine, pricing, copy…) | Instantly — the app loads the live site | **Just deploy the web app.** No desktop release. |
+| The **desktop shell** (this repo: window, splash, update logic, icon) | `electron-updater` auto-updates on next launch | Publish a new GitHub Release (below). |
+
+So day-to-day, you update the web app and every desktop user sees it immediately.
+You only cut a new `.exe` when the native wrapper itself changes.
 
 ## Stack
 
-Electron + Vite + React + TypeScript. Recharts for charts. The renderer talks to
-the API over HTTPS with a bearer token (identical model to the Flutter app).
+Electron (main process only). No renderer bundle — the window loads the remote
+portal. `contextIsolation` on, `nodeIntegration` off; the preload exposes only a
+tiny safe surface (`window.flz`).
 
 ## Run in development
 
 ```bash
 npm install
-npm run dev        # Vite dev server + Electron window
+npm run dev            # loads the PRODUCTION portal in an Electron window
+npm run dev:local      # loads http://localhost:3000/en/corporate (run the web app first)
 ```
 
-Point at a different backend (e.g. staging) with a build-time env var:
-
-```bash
-VITE_API_BASE=https://staging.flighterz.com/api/mobile npm run dev
-```
-
-Default base: `https://www.flighterz.com/api/mobile`.
+Point at any portal with an env var: `PORTAL_URL=https://staging.example/en/corporate npm run dev`.
+(Update checks are skipped unless the app is packaged.)
 
 ## Build the Windows installer (.exe)
 
@@ -48,66 +57,42 @@ npm run dist            # NSIS install wizard  → release/Flighterz Business Se
 npm run dist:portable   # single portable .exe → release/Flighterz Business <version>.exe
 ```
 
-The NSIS target is the standard **install wizard** (choose folder, desktop + Start
-menu shortcuts). Output lands in `release/`.
+- **App icon:** `build/icon.png` (electron-builder derives the multi-res `.ico`).
+- **Code signing (recommended):** set `CSC_LINK` (path/URL to a `.pfx`) and
+  `CSC_KEY_PASSWORD` before building; unsigned builds trigger a SmartScreen warning
+  on first run and make auto-update less seamless.
 
-- **App icon:** drop a 256×256 multi-res `build/icon.ico`, then uncomment the
-  `icon:` line in `electron-builder.yml` for a branded installer + taskbar icon.
-- **Code signing (recommended for distribution):** set `CSC_LINK` (path/URL to a
-  `.pfx`) and `CSC_KEY_PASSWORD` env vars before `npm run dist`; electron-builder
-  signs automatically. Unsigned builds trigger a SmartScreen warning on first run.
+## Ship a shell update (GitHub Releases)
 
-## Automatic updates (GitHub Releases)
+The app self-updates via `electron-updater` from the **public** repo
+`sharpyassir/flighterz-business` (set in `electron-builder.yml`).
 
-The app self-updates via `electron-updater`, checking **GitHub Releases** of the
-**public** repo `sharpyassir/flighterz-business` (set in `electron-builder.yml`).
-On launch it looks for a newer release, downloads it in the background, and
-installs on next quit — no manual reinstall.
-
-**One-time setup:** create the public repo `sharpyassir/flighterz-business` on
-GitHub (it only needs to hold releases — no source required).
-
-**To ship an update:**
 1. Bump `version` in `package.json`.
 2. Build + publish in one step:
    ```bash
-   GH_TOKEN=<github-token-with-repo-scope> npm run dist -- --publish always
+   GH_TOKEN=<github-token-with-repo-scope> npm run publish
    ```
-   That builds the installer and creates a GitHub Release with `latest.yml`, the
-   `.exe`, and the `.exe.blockmap`.
-   **Or** manually: `npm run dist`, then create a Release on the repo and upload
-   those three files from `release/`.
-3. Every installed app updates itself on next launch.
+   This builds the installer and creates a GitHub Release with `latest.yml`, the
+   `.exe` and the `.exe.blockmap`. (Manual alternative: `npm run dist`, then create
+   a Release and upload those three files from `release/`.)
+3. Every installed app picks it up on next launch via the update-gate.
 
-> The **first** version carrying this config must be installed manually; every
-> version after that auto-updates. Signed builds (see code signing) make the
-> auto-update trusted so Windows installs it without a SmartScreen prompt.
+> **One-time:** the public repo `sharpyassir/flighterz-business` must exist (it only
+> needs to hold Releases — no source). The first version that carries this shell
+> must be installed manually; every version after auto-updates.
 
-## Hosting the download
+## Hosting the first download
 
-1. Build the `.exe` (above).
-2. Upload it somewhere public (e.g. `web/public/downloads/` on the site, or object
-   storage/CDN).
+1. Build the `.exe`.
+2. Upload it somewhere public (e.g. `web/public/downloads/` on the site, or a CDN).
 3. Set `NEXT_PUBLIC_BUSINESS_APP_URL` on the website to that URL — the "Flighterz
-   Business for Windows" button on the homepage/footer then links to it.
+   Business for Windows" button then links to it.
 
-## Backend it depends on
+## Legacy native screens
 
-| Capability | Endpoint | Status |
-|---|---|---|
-| Corporate email-OTP login | `POST /api/mobile/corporate/otp/request` + `/verify` | ✅ live (added with this app) |
-| Company profile + wallet ledger | `GET /api/mobile/corporate/account` | ✅ live |
-| Booking engine | website `/flights` flow (Amadeus AQC) | 🟡 gated on AQC credentials + `PAYMENTS_ENABLED` |
-| Persist approval policies / employee tree | corporate-org & policy API | 🔴 Phase 2 (currently stored locally per device) |
-| Deeper corporate analytics (per-employee, per-route) | corporate-analytics API | 🔴 Phase 2 |
-
-## Roadmap
-
-- **Phase 1 (this scaffold):** OTP login, analytics from account data, booking
-  launch, local policy + employee-tree editors, installer pipeline.
-- **Phase 2:** server-persisted employee tree & approval policies (new Prisma
-  models + endpoints), richer corporate analytics, embedded in-app booking once
-  the AQC search/price/book API is credentialed, auto-update, code signing.
+The pre-0.2.0 native React screens (`src/`, `index.html`, `vite.config.ts`,
+`src/api.ts`) are **no longer used** by the shell and are kept only for reference.
+They can be deleted once you're happy with the shell.
 
 ---
 © Middle East Marina Company. Internal corporate tooling for Flighterz.

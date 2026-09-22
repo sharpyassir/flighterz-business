@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flighterz Business</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid; place-items: center;
+        background: radial-gradient(1200px 600px at 70% -10%, #16324f 0%, #0d2138 55%, #0a1a2e 100%);
+        font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #fff;
+      }
+      .wrap { text-align: center; transform: translateY(-6%); }
+      .logo { height: 46px; width: auto; opacity: .96; margin-bottom: 26px; }
+      .ring {
+        width: 42px; height: 42px; margin: 0 auto 20px; border-radius: 50%;
+        border: 3px solid rgba(255,255,255,.15); border-top-color: #e5b53a; animation: spin .9s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      #status { font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8); letter-spacing: .2px; min-height: 20px; }
+      .brand { margin-top: 8px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(229,181,58,.75); font-weight: 800; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <img class="logo" src="../build/icon.png" alt="Flighterz Business" onerror="this.style.display='none'" />
+      <div class="ring"></div>
+      <div id="status">Starting Flighterz Business…</div>
+      <div class="brand">Flighterz Business</div>
+    </div>
+    <script>
+      window.__setStatus = function (t) {
+        var el = document.getElementById("status");
+        if (el) el.textContent = t;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flighterz Business — Offline</title>
+    <style>
+      :root { color-scheme: dark; }
+      html, body { height: 100%; margin: 0; }
+      body {
+        display: grid; place-items: center;
+        background: radial-gradient(1200px 600px at 70% -10%, #16324f 0%, #0d2138 55%, #0a1a2e 100%);
+        font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #fff;
+      }
+      .card { text-align: center; max-width: 420px; padding: 0 24px; transform: translateY(-4%); }
+      .logo { height: 40px; margin-bottom: 22px; opacity: .95; }
+      h1 { font-size: 20px; margin: 0 0 8px; }
+      p { color: rgba(255,255,255,.7); font-size: 14px; line-height: 1.6; margin: 0 0 22px; }
+      button {
+        background: #e5b53a; color: #0d2138; border: 0; border-radius: 999px;
+        padding: 12px 28px; font-size: 14px; font-weight: 800; cursor: pointer;
+      }
+      button:hover { background: #f0c862; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <img class="logo" src="../build/icon.png" alt="Flighterz Business" onerror="this.style.display='none'" />
+      <h1>You're offline</h1>
+      <p>Flighterz Business needs an internet connection to reach your company portal. Check your connection and try again.</p>
+      <button id="retry">Try again</button>
+    </div>
+    <script>
+      document.getElementById("retry").addEventListener("click", function () {
+        if (window.flz && window.flz.reloadPortal) window.flz.reloadPortal();
+      });
+    </script>
+  </body>
+</html>

@@ -1,17 +1,18 @@
 {
   "name": "flighterz-business",
   "productName": "Flighterz Business",
-  "version": "0.1.6",
-  "description": "Flighterz Business — corporate travel desktop app (bookings, analytics, approval policies, employee tree).",
+  "version": "0.2.0",
+  "description": "Flighterz Business — auto-updating desktop shell for the Flighterz corporate travel portal.",
   "author": "Middle East Marina Company",
   "private": true,
   "main": "electron/main.js",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && cross-env ELECTRON_START_URL=http://localhost:5173 electron .\"",
-    "build": "vite build",
-    "dist": "vite build && electron-builder --win nsis",
-    "dist:portable": "vite build && electron-builder --win portable"
+    "dev": "electron .",
+    "dev:local": "cross-env PORTAL_URL=http://localhost:3000/en/corporate electron .",
+    "dist": "electron-builder --win nsis",
+    "dist:portable": "electron-builder --win portable",
+    "publish": "electron-builder --win nsis --publish always"
   },
   "dependencies": {
     "electron-updater": "^6.3.0",
