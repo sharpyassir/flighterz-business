@@ -1,5 +1,9 @@
 # Flighterz Business (desktop)
 
+> This repository also hosts **[`progrid-accounting/`](progrid-accounting/README.md)** — the
+> Progrid Cloud bookkeeping system (KSA: VAT, WHT, Zakat, GOSI, ZATCA e-invoicing). It is a
+> separate Node package and is not part of the desktop app build.
+
 A Windows desktop app for **corporate accounts**. As of v0.2.0 it is a **branded,
 auto-updating shell around the live Flighterz corporate portal**
 (`https://www.flighterz.com/en/corporate`). The desktop app therefore *is* the web

@@ -1,0 +1,273 @@
+{
+  "label": "2026-Q1",
+  "from": "2026-01-01",
+  "to": "2026-03-31",
+  "dueDate": "2026-04-30",
+  "boxes": [
+    {
+      "box": 1,
+      "en": "Standard rated sales",
+      "ar": "المبيعات الخاضعة للنسبة الأساسية",
+      "amount": 19650000,
+      "adjustment": -100000,
+      "vat": 2932500
+    },
+    {
+      "box": 2,
+      "en": "Private healthcare / private education sales to citizens",
+      "ar": "المبيعات للمواطنين (خدمات صحية/تعليم أهلي)",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 3,
+      "en": "Zero rated domestic sales",
+      "ar": "المبيعات المحلية الخاضعة للنسبة الصفرية",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 4,
+      "en": "Exports",
+      "ar": "الصادرات",
+      "amount": 2000000,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 5,
+      "en": "Exempt sales",
+      "ar": "المبيعات المعفاة",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 7,
+      "en": "Standard rated domestic purchases",
+      "ar": "المشتريات الخاضعة للنسبة الأساسية",
+      "amount": 7910000,
+      "adjustment": 0,
+      "vat": 1186500
+    },
+    {
+      "box": 8,
+      "en": "Imports subject to VAT paid at customs",
+      "ar": "الاستيرادات الخاضعة للضريبة المدفوعة في الجمارك",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 9,
+      "en": "Imports subject to VAT accounted for through reverse charge",
+      "ar": "الاستيرادات الخاضعة للضريبة بآلية الاحتساب العكسي",
+      "amount": 9810000,
+      "adjustment": 0,
+      "vat": 1471500
+    },
+    {
+      "box": 10,
+      "en": "Zero rated purchases",
+      "ar": "المشتريات الخاضعة للنسبة الصفرية",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    },
+    {
+      "box": 11,
+      "en": "Exempt purchases",
+      "ar": "المشتريات المعفاة",
+      "amount": 0,
+      "adjustment": 0,
+      "vat": 0
+    }
+  ],
+  "totalSales": {
+    "box": 6,
+    "en": "Total sales",
+    "ar": "إجمالي المبيعات",
+    "amount": 21650000,
+    "adjustment": -100000,
+    "vat": 2932500
+  },
+  "totalPurchases": {
+    "box": 12,
+    "en": "Total purchases",
+    "ar": "إجمالي المشتريات",
+    "amount": 17720000,
+    "adjustment": 0,
+    "vat": 2658000
+  },
+  "reverseChargeOutput": 1471500,
+  "totalVatDue": 1746000,
+  "corrections": 0,
+  "creditCarriedForward": 0,
+  "netVatDue": 1746000,
+  "ledgerSettlement": 1746000,
+  "reconciles": true,
+  "lines": [
+    {
+      "box": 7,
+      "ref": "BILL-2026-002",
+      "date": "2026-01-01",
+      "base": 4500000,
+      "tax": 675000,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000001",
+      "date": "2026-01-05",
+      "base": 13500000,
+      "tax": 2025000,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000002",
+      "date": "2026-01-10",
+      "base": 950000,
+      "tax": 142500,
+      "adjustment": false
+    },
+    {
+      "box": 7,
+      "ref": "BILL-2026-003",
+      "date": "2026-01-12",
+      "base": 2250000,
+      "tax": 337500,
+      "adjustment": false
+    },
+    {
+      "box": 4,
+      "ref": "PGC-2026-000003",
+      "date": "2026-01-15",
+      "base": 2000000,
+      "tax": 0,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000004",
+      "date": "2026-01-20",
+      "base": 80000,
+      "tax": 12000,
+      "adjustment": false
+    },
+    {
+      "box": 9,
+      "ref": "BILL-2026-004",
+      "date": "2026-01-25",
+      "base": 960000,
+      "tax": 144000,
+      "adjustment": false
+    },
+    {
+      "box": 7,
+      "ref": "BILL-2026-005",
+      "date": "2026-01-28",
+      "base": 120000,
+      "tax": 18000,
+      "adjustment": false
+    },
+    {
+      "box": 9,
+      "ref": "BILL-2026-001",
+      "date": "2026-01-31",
+      "base": 2800000,
+      "tax": 420000,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000005",
+      "date": "2026-02-10",
+      "base": 950000,
+      "tax": 142500,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000006",
+      "date": "2026-02-12",
+      "base": 630000,
+      "tax": 94500,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-CN-2026-000001",
+      "date": "2026-02-14",
+      "base": -100000,
+      "tax": -15000,
+      "adjustment": true
+    },
+    {
+      "box": 7,
+      "ref": "BILL-2026-008",
+      "date": "2026-02-20",
+      "base": 800000,
+      "tax": 120000,
+      "adjustment": false
+    },
+    {
+      "box": 7,
+      "ref": "BILL-2026-007",
+      "date": "2026-02-26",
+      "base": 120000,
+      "tax": 18000,
+      "adjustment": false
+    },
+    {
+      "box": 9,
+      "ref": "BILL-2026-006",
+      "date": "2026-02-28",
+      "base": 2950000,
+      "tax": 442500,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000007",
+      "date": "2026-03-10",
+      "base": 950000,
+      "tax": 142500,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000008",
+      "date": "2026-03-18",
+      "base": 90000,
+      "tax": 13500,
+      "adjustment": false
+    },
+    {
+      "box": 1,
+      "ref": "PGC-2026-000009",
+      "date": "2026-03-20",
+      "base": 2500000,
+      "tax": 375000,
+      "adjustment": false
+    },
+    {
+      "box": 7,
+      "ref": "BILL-2026-010",
+      "date": "2026-03-27",
+      "base": 120000,
+      "tax": 18000,
+      "adjustment": false
+    },
+    {
+      "box": 9,
+      "ref": "BILL-2026-009",
+      "date": "2026-03-31",
+      "base": 3100000,
+      "tax": 465000,
+      "adjustment": false
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "_note": "Saudi tax parameters used by the engine. Rates change — review against ZATCA / GOSI publications at least yearly and before each annual close. Source references are in docs/KSA-COMPLIANCE.md.",
+  "vat": {
+    "standardRate": 0.15,
+    "monthlyFilingThresholdSar": 40000000,
+    "correctionThresholdSar": 5000,
+    "simplifiedInvoiceMaxSar": 1000
+  },
+  "wht": {
+    "_note": "Income Tax Law Art. 68 / Implementing Regulations Art. 63 — payments to non-residents from a KSA source. Due by the 10th of the month after payment.",
+    "rates": {
+      "rent": 0.05,
+      "airline_freight": 0.05,
+      "telecom_international": 0.05,
+      "dividends": 0.05,
+      "loan_returns": 0.05,
+      "insurance": 0.05,
+      "technical_consulting": 0.05,
+      "royalties": 0.15,
+      "related_party_services": 0.15,
+      "other_services": 0.15,
+      "management_fees": 0.2
+    }
+  },
+  "gosi": {
+    "_note": "Contribution base = basic + housing, capped. Saudis: annuities (pension) + SANED (unemployment) + occupational hazards. Non-Saudis: occupational hazards only, employer-paid. New Social Insurance Law (from 3 Jul 2024) raises the annuity rate for NEW Saudi registrants by 0.5 % per side every July from 2025 to 11 % in 2028.",
+    "maxBaseSar": 45000,
+    "minBaseSar": 1500,
+    "saudi": {
+      "annuityEmployer": 0.09,
+      "annuityEmployee": 0.09,
+      "sanedEmployer": 0.0075,
+      "sanedEmployee": 0.0075,
+      "hazardsEmployer": 0.02
+    },
+    "nonSaudi": { "hazardsEmployer": 0.02 },
+    "newRegimeAnnuitySchedule": [
+      { "from": "2024-07-03", "rate": 0.09 },
+      { "from": "2025-07-01", "rate": 0.095 },
+      { "from": "2026-07-01", "rate": 0.1 },
+      { "from": "2027-07-01", "rate": 0.105 },
+      { "from": "2028-07-01", "rate": 0.11 }
+    ]
+  },
+  "eosb": {
+    "_note": "Labour Law Art. 84: half a month's wage per year for the first 5 years, one month's wage per year thereafter, on the last wage (basic + housing + transport by default). Formula-based accrual; IAS 19 projected-unit-credit valuation should be obtained for the audited year-end.",
+    "wageComponents": ["basic", "housing", "transport"],
+    "firstYearsThreshold": 5,
+    "firstYearsMonthsPerYear": 0.5,
+    "laterYearsMonthsPerYear": 1
+  },
+  "zakat": {
+    "_note": "2.5 % on the zakat base for a Hijri year; pro-rated to the Gregorian year (365/354). Zakat Implementing Regulations effective for fiscal years starting on/after 1 Jan 2024.",
+    "hijriRate": 0.025,
+    "gregorianDays": 365,
+    "hijriDays": 354,
+    "incomeTaxRate": 0.2,
+    "monthlyAccrual": true
+  },
+  "fixedAssets": {
+    "capitalisationThresholdSar": 2500,
+    "usefulLifeMonths": {
+      "computers": 36,
+      "furniture": 60,
+      "leasehold": 60,
+      "software": 36
+    }
+  }
+}

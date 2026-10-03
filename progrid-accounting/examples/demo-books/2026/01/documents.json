@@ -1,0 +1,225 @@
+[
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000001",
+    "date": "2026-01-05",
+    "time": "10:15:00",
+    "customer": "C001",
+    "lines": [
+      {
+        "description": "Progrid Cloud Enterprise — annual subscription 2026",
+        "quantity": 1,
+        "unitPrice": 120000,
+        "descriptionAr": "اشتراك سنوي - بروجريد السحابية للمؤسسات",
+        "servicePeriod": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        }
+      },
+      {
+        "description": "Implementation & onboarding",
+        "quantity": 1,
+        "unitPrice": 15000,
+        "descriptionAr": "خدمات التنفيذ والتهيئة",
+        "account": "4300"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000002",
+    "date": "2026-01-10",
+    "time": "09:00:00",
+    "customer": "C002",
+    "lines": [
+      {
+        "description": "Progrid Cloud Business — 25 users, January 2026",
+        "quantity": 25,
+        "unitPrice": 400,
+        "discount": 500,
+        "descriptionAr": "اشتراك شهري - ٢٥ مستخدم"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000003",
+    "date": "2026-01-15",
+    "time": "11:30:00",
+    "customer": "C003",
+    "lines": [
+      {
+        "description": "Cloud architecture consulting (services exported)",
+        "quantity": 1,
+        "unitPrice": 20000,
+        "account": "4300",
+        "vatTreatment": "export",
+        "vatExemptionCode": "VATEX-SA-33",
+        "vatExemptionReason": "Export of services"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000004",
+    "date": "2026-01-20",
+    "time": "16:45:00",
+    "customer": "C004",
+    "invoiceKind": "simplified",
+    "lines": [
+      {
+        "description": "Premium support pack",
+        "quantity": 1,
+        "unitPrice": 800,
+        "account": "4400",
+        "descriptionAr": "باقة الدعم المميز"
+      }
+    ]
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-001",
+    "date": "2026-01-08",
+    "customer": "C001",
+    "amount": 57500,
+    "invoices": [
+      "INV-2025-0412"
+    ]
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-002",
+    "date": "2026-01-20",
+    "customer": "C004",
+    "amount": 920
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-003",
+    "date": "2026-01-28",
+    "customer": "C002",
+    "amount": 10925
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-001",
+    "supplierInvoiceNo": "GCI-INV-77812",
+    "date": "2026-01-31",
+    "supplier": "S001",
+    "lines": [
+      {
+        "description": "Cloud hosting & compute — January 2026",
+        "amount": 28000
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-002",
+    "supplierInvoiceNo": "ROS-Q1-2026",
+    "date": "2026-01-01",
+    "supplier": "S002",
+    "paidFrom": "1120",
+    "lines": [
+      {
+        "description": "Office rent Q1 2026",
+        "amount": 45000,
+        "servicePeriod": {
+          "start": "2026-01-01",
+          "end": "2026-03-31"
+        }
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-003",
+    "supplierInvoiceNo": "TS-55120",
+    "date": "2026-01-12",
+    "supplier": "S005",
+    "lines": [
+      {
+        "description": "Developer laptops x3",
+        "amount": 22500,
+        "capitalize": {
+          "assetClass": "computers",
+          "usefulLifeMonths": 36
+        }
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-004",
+    "supplierInvoiceNo": "DT-2026-0091",
+    "date": "2026-01-25",
+    "supplier": "S006",
+    "paidFrom": "1140",
+    "whtBorneByPayer": true,
+    "lines": [
+      {
+        "description": "CI/CD platform licence — 2026",
+        "amount": 9600,
+        "servicePeriod": {
+          "start": "2026-01-01",
+          "end": "2026-12-31"
+        }
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-005",
+    "supplierInvoiceNo": "NT-0126-4411",
+    "date": "2026-01-28",
+    "supplier": "S003",
+    "lines": [
+      {
+        "description": "Internet & phones — January",
+        "amount": 1200
+      }
+    ]
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-001",
+    "date": "2026-01-15",
+    "supplier": "S004",
+    "amount": 11500,
+    "bills": [
+      "AWA-2025-88"
+    ]
+  },
+  {
+    "type": "payroll",
+    "id": "PAYROLL-2026-01",
+    "month": "2026-01",
+    "date": "2026-01-27",
+    "paid": true
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-001",
+    "date": "2026-01-14",
+    "tax": "gosi",
+    "amount": 6000,
+    "reference": "GOSI-DEC-2025"
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-002",
+    "date": "2026-01-28",
+    "tax": "vat",
+    "amount": 18000,
+    "reference": "VAT-Q4-2025"
+  },
+  {
+    "type": "transfer",
+    "id": "TRF-2026-001",
+    "date": "2026-01-30",
+    "from": "1120",
+    "to": "1140",
+    "amount": 9600,
+    "memo": "Settle company credit card statement"
+  }
+]

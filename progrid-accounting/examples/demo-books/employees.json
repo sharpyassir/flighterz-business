@@ -1,0 +1,51 @@
+[
+  {
+    "id": "E001",
+    "name": "Employee A (Saudi, engineering)",
+    "nationality": "saudi",
+    "gosiRegime": "legacy",
+    "joinDate": "2023-03-01",
+    "basic": 18000,
+    "housing": 4500,
+    "transport": 1800,
+    "department": "cost_of_revenue"
+  },
+  {
+    "id": "E002",
+    "name": "Employee B (Saudi, operations)",
+    "nationality": "saudi",
+    "gosiRegime": "new_2024",
+    "joinDate": "2025-09-01",
+    "basic": 9000,
+    "housing": 2250,
+    "transport": 900,
+    "department": "operations"
+  },
+  {
+    "id": "E003",
+    "name": "Employee C (non-Saudi, engineering)",
+    "nationality": "non_saudi",
+    "joinDate": "2022-06-15",
+    "basic": 14000,
+    "housing": 3500,
+    "transport": 1400,
+    "department": "cost_of_revenue",
+    "changes": [
+      {
+        "effective": "2026-03-01",
+        "basic": 15000,
+        "housing": 3750
+      }
+    ]
+  },
+  {
+    "id": "E004",
+    "name": "Employee D (non-Saudi, sales)",
+    "nationality": "non_saudi",
+    "joinDate": "2026-02-15",
+    "basic": 8000,
+    "housing": 2000,
+    "transport": 800,
+    "department": "operations"
+  }
+]

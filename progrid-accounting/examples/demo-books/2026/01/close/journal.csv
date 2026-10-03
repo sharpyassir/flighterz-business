@@ -1,0 +1,60 @@
+﻿Entry,Date,Source,Type,Memo,Account,Account name,Party,Debit,Credit,Line memo
+JE-202601-00002,2026-01-01,BILL-2026-002,purchase_bill,Bill ROS-Q1-2026 — Riyadh Office Spaces Co. (demo),6200,Rent,S002,15500.00,0.00,Office rent Q1 2026
+JE-202601-00002,2026-01-01,BILL-2026-002,purchase_bill,Bill ROS-Q1-2026 — Riyadh Office Spaces Co. (demo),1310,Prepaid expenses,S002,29500.00,0.00,Prepaid: Office rent Q1 2026
+JE-202601-00002,2026-01-01,BILL-2026-002,purchase_bill,Bill ROS-Q1-2026 — Riyadh Office Spaces Co. (demo),1410,Input VAT — recoverable,,6750.00,0.00,
+JE-202601-00002,2026-01-01,BILL-2026-002,purchase_bill,Bill ROS-Q1-2026 — Riyadh Office Spaces Co. (demo),1120,Bank — SAR current account,S002,0.00,51750.00,
+JE-202601-00003,2026-01-05,PGC-2026-000001,sales_invoice,Sales invoice PGC-2026-000001 — Al Noor Logistics Co. (demo),1210,Trade receivables,C001,155250.00,0.00,
+JE-202601-00003,2026-01-05,PGC-2026-000001,sales_invoice,Sales invoice PGC-2026-000001 — Al Noor Logistics Co. (demo),4100,Subscription revenue (SaaS),C001,0.00,10191.78,Progrid Cloud Enterprise — annual subscription 2026
+JE-202601-00003,2026-01-05,PGC-2026-000001,sales_invoice,Sales invoice PGC-2026-000001 — Al Noor Logistics Co. (demo),2410,Deferred revenue (contract liabilities),C001,0.00,109808.22,Deferred: Progrid Cloud Enterprise — annual subscription 2026
+JE-202601-00003,2026-01-05,PGC-2026-000001,sales_invoice,Sales invoice PGC-2026-000001 — Al Noor Logistics Co. (demo),4300,Implementation & professional services,C001,0.00,15000.00,Implementation & onboarding
+JE-202601-00003,2026-01-05,PGC-2026-000001,sales_invoice,Sales invoice PGC-2026-000001 — Al Noor Logistics Co. (demo),2210,Output VAT,,0.00,20250.00,
+JE-202601-00004,2026-01-08,RCPT-2026-001,receipt,Receipt from Al Noor Logistics Co. (demo),1120,Bank — SAR current account,,57500.00,0.00,
+JE-202601-00004,2026-01-08,RCPT-2026-001,receipt,Receipt from Al Noor Logistics Co. (demo),1210,Trade receivables,C001,0.00,57500.00,
+JE-202601-00005,2026-01-10,PGC-2026-000002,sales_invoice,Sales invoice PGC-2026-000002 — Gulf Retail Group (demo),1210,Trade receivables,C002,10925.00,0.00,
+JE-202601-00005,2026-01-10,PGC-2026-000002,sales_invoice,Sales invoice PGC-2026-000002 — Gulf Retail Group (demo),4100,Subscription revenue (SaaS),C002,0.00,9500.00,"Progrid Cloud Business — 25 users, January 2026"
+JE-202601-00005,2026-01-10,PGC-2026-000002,sales_invoice,Sales invoice PGC-2026-000002 — Gulf Retail Group (demo),2210,Output VAT,,0.00,1425.00,
+JE-202601-00006,2026-01-12,BILL-2026-003,purchase_bill,Bill TS-55120 — Tech Store KSA (demo),1510,Computer & network equipment,S005,22500.00,0.00,Developer laptops x3
+JE-202601-00006,2026-01-12,BILL-2026-003,purchase_bill,Bill TS-55120 — Tech Store KSA (demo),1410,Input VAT — recoverable,,3375.00,0.00,
+JE-202601-00006,2026-01-12,BILL-2026-003,purchase_bill,Bill TS-55120 — Tech Store KSA (demo),2110,Trade payables,S005,0.00,25875.00,
+JE-202601-00007,2026-01-14,TAX-2026-001,tax_payment,GOSI payment (SADAD GOSI-DEC-2025),2320,GOSI payable,,6000.00,0.00,
+JE-202601-00007,2026-01-14,TAX-2026-001,tax_payment,GOSI payment (SADAD GOSI-DEC-2025),1120,Bank — SAR current account,,0.00,6000.00,
+JE-202601-00008,2026-01-15,PGC-2026-000003,sales_invoice,Sales invoice PGC-2026-000003 — Nile Data Systems (demo),1210,Trade receivables,C003,20000.00,0.00,
+JE-202601-00008,2026-01-15,PGC-2026-000003,sales_invoice,Sales invoice PGC-2026-000003 — Nile Data Systems (demo),4300,Implementation & professional services,C003,0.00,20000.00,Cloud architecture consulting (services exported)
+JE-202601-00009,2026-01-15,PAY-2026-001,payment,Payment to Al Waha Audit & Advisory (demo),2110,Trade payables,S004,11500.00,0.00,
+JE-202601-00009,2026-01-15,PAY-2026-001,payment,Payment to Al Waha Audit & Advisory (demo),1120,Bank — SAR current account,,0.00,11500.00,
+JE-202601-00010,2026-01-20,PGC-2026-000004,sales_invoice,Sales invoice PGC-2026-000004 — Walk-in individual customers,1210,Trade receivables,C004,920.00,0.00,
+JE-202601-00010,2026-01-20,PGC-2026-000004,sales_invoice,Sales invoice PGC-2026-000004 — Walk-in individual customers,4400,Support & maintenance revenue,C004,0.00,800.00,Premium support pack
+JE-202601-00010,2026-01-20,PGC-2026-000004,sales_invoice,Sales invoice PGC-2026-000004 — Walk-in individual customers,2210,Output VAT,,0.00,120.00,
+JE-202601-00011,2026-01-20,RCPT-2026-002,receipt,Receipt from Walk-in individual customers,1120,Bank — SAR current account,,920.00,0.00,
+JE-202601-00011,2026-01-20,RCPT-2026-002,receipt,Receipt from Walk-in individual customers,1210,Trade receivables,C004,0.00,920.00,
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",6600,Internal software subscriptions,S006,815.35,0.00,CI/CD platform licence — 2026
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",1310,Prepaid expenses,S006,8784.65,0.00,Prepaid: CI/CD platform licence — 2026
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",1415,Input VAT — reverse charge,,1440.00,0.00,
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",2215,Output VAT — reverse charge,,0.00,1440.00,
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",6910,Withholding tax borne,,1694.12,0.00,WHT borne (royalties)
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",2230,Withholding tax payable,S006,0.00,1694.12,
+JE-202601-00012,2026-01-25,BILL-2026-004,purchase_bill,"Bill DT-2026-0091 — DevTools Inc. (demo, US)",1140,Company credit card clearing,S006,0.00,9600.00,
+JE-202601-00013,2026-01-27,PAYROLL-2026-01,payroll,Payroll 2026-01 (3 employees) — paid via WPS,5300,Direct staff costs,,43200.00,0.00,Gross pay — delivery/engineering
+JE-202601-00013,2026-01-27,PAYROLL-2026-01,payroll,Payroll 2026-01 (3 employees) — paid via WPS,6100,Salaries & wages,,12150.00,0.00,Gross pay — operations
+JE-202601-00013,2026-01-27,PAYROLL-2026-01,payroll,Payroll 2026-01 (3 employees) — paid via WPS,6130,GOSI — employer contribution,,4371.88,0.00,GOSI employer share
+JE-202601-00013,2026-01-27,PAYROLL-2026-01,payroll,Payroll 2026-01 (3 employees) — paid via WPS,2320,GOSI payable,,0.00,7718.76,GOSI employer + employee
+JE-202601-00013,2026-01-27,PAYROLL-2026-01,payroll,Payroll 2026-01 (3 employees) — paid via WPS,1120,Bank — SAR current account,,0.00,52003.12,Net pay
+JE-202601-00014,2026-01-28,BILL-2026-005,purchase_bill,Bill NT-0126-4411 — Najd Telecom Co. (demo),6210,Utilities & telecommunications,S003,1200.00,0.00,Internet & phones — January
+JE-202601-00014,2026-01-28,BILL-2026-005,purchase_bill,Bill NT-0126-4411 — Najd Telecom Co. (demo),1410,Input VAT — recoverable,,180.00,0.00,
+JE-202601-00014,2026-01-28,BILL-2026-005,purchase_bill,Bill NT-0126-4411 — Najd Telecom Co. (demo),2110,Trade payables,S003,0.00,1380.00,
+JE-202601-00015,2026-01-28,RCPT-2026-003,receipt,Receipt from Gulf Retail Group (demo),1120,Bank — SAR current account,,10925.00,0.00,
+JE-202601-00015,2026-01-28,RCPT-2026-003,receipt,Receipt from Gulf Retail Group (demo),1210,Trade receivables,C002,0.00,10925.00,
+JE-202601-00016,2026-01-28,TAX-2026-002,tax_payment,VAT payment (SADAD VAT-Q4-2025),2220,VAT payable / (refundable) — ZATCA,,18000.00,0.00,
+JE-202601-00016,2026-01-28,TAX-2026-002,tax_payment,VAT payment (SADAD VAT-Q4-2025),1120,Bank — SAR current account,,0.00,18000.00,
+JE-202601-00017,2026-01-30,TRF-2026-001,transfer,Settle company credit card statement,1140,Company credit card clearing,,9600.00,0.00,
+JE-202601-00017,2026-01-30,TRF-2026-001,transfer,Settle company credit card statement,1120,Bank — SAR current account,,0.00,9600.00,
+JE-202601-00018,2026-01-31,BILL-2026-001,purchase_bill,"Bill GCI-INV-77812 — Global Cloud Infrastructure Ltd (demo, IE)",5100,Cloud hosting & infrastructure,S001,28000.00,0.00,Cloud hosting & compute — January 2026
+JE-202601-00018,2026-01-31,BILL-2026-001,purchase_bill,"Bill GCI-INV-77812 — Global Cloud Infrastructure Ltd (demo, IE)",1415,Input VAT — reverse charge,,4200.00,0.00,
+JE-202601-00018,2026-01-31,BILL-2026-001,purchase_bill,"Bill GCI-INV-77812 — Global Cloud Infrastructure Ltd (demo, IE)",2215,Output VAT — reverse charge,,0.00,4200.00,
+JE-202601-00018,2026-01-31,BILL-2026-001,purchase_bill,"Bill GCI-INV-77812 — Global Cloud Infrastructure Ltd (demo, IE)",2110,Trade payables,S001,0.00,28000.00,
+JE-202601-00019,2026-01-31,auto:depreciation,auto,Depreciation & amortisation 2026-01,6700,Depreciation,,1666.67,0.00,computers
+JE-202601-00019,2026-01-31,auto:depreciation,auto,Depreciation & amortisation 2026-01,1515,Accumulated depreciation — computers,,0.00,1666.67,computers
+JE-202601-00020,2026-01-31,auto:eosb,auto,End-of-service benefits accrual 2026-01,6140,End-of-service benefits expense,,2348.86,0.00,
+JE-202601-00020,2026-01-31,auto:eosb,auto,End-of-service benefits accrual 2026-01,2610,End-of-service benefits provision,,0.00,2348.86,
+JE-202601-00021,2026-01-31,auto:zakat,auto,Zakat accrual 2026-01 (1/12 of estimate),7100,Zakat,,1714.29,0.00,
+JE-202601-00021,2026-01-31,auto:zakat,auto,Zakat accrual 2026-01 (1/12 of estimate),2240,Zakat / income tax payable,,0.00,1714.29,

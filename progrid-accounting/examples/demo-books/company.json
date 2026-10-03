@@ -1,0 +1,23 @@
+{
+  "_note": "ILLUSTRATIVE DEMO DATA — fictional company, customers, suppliers and employees. VAT/CR numbers are ZATCA sandbox-style test values.",
+  "legalNameEn": "Progrid Cloud (DEMO)",
+  "legalNameAr": "شركة بروجريد السحابية (تجريبي)",
+  "vatNumber": "399999999900003",
+  "crNumber": "1010000000",
+  "address": {
+    "street": "King Fahd Road",
+    "buildingNumber": "1234",
+    "additionalNumber": "5678",
+    "district": "Al Olaya",
+    "city": "Riyadh",
+    "postalCode": "12211",
+    "country": "SA"
+  },
+  "fiscalYearStartMonth": 1,
+  "vatFilingFrequency": "quarterly",
+  "saudiGccOwnershipPercent": 100,
+  "invoicePrefix": "PGC",
+  "issueZatcaInvoices": true,
+  "defaultBankAccount": "1120",
+  "booksStartDate": "2026-01-01"
+}

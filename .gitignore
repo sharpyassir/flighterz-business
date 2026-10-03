@@ -3,3 +3,6 @@ dist/
 release/
 *.log
 .DS_Store
+
+# Progrid accounting — EGS private keys, CSRs and Fatoora credentials must never be committed
+progrid-accounting/**/zatca/egs/

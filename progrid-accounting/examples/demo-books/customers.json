@@ -1,0 +1,51 @@
+[
+  {
+    "id": "C001",
+    "name": "Al Noor Logistics Co. (demo)",
+    "nameAr": "شركة النور للخدمات اللوجستية",
+    "vatNumber": "310000000000003",
+    "crNumber": "1010111111",
+    "country": "SA",
+    "address": {
+      "street": "Prince Sultan St",
+      "buildingNumber": "2211",
+      "district": "Al Rawdah",
+      "city": "Jeddah",
+      "postalCode": "23434"
+    },
+    "paymentTermsDays": 30
+  },
+  {
+    "id": "C002",
+    "name": "Gulf Retail Group (demo)",
+    "nameAr": "مجموعة الخليج للتجزئة",
+    "vatNumber": "311111111100003",
+    "country": "SA",
+    "address": {
+      "street": "Olaya St",
+      "buildingNumber": "3344",
+      "district": "Al Malaz",
+      "city": "Riyadh",
+      "postalCode": "12836"
+    },
+    "paymentTermsDays": 30
+  },
+  {
+    "id": "C003",
+    "name": "Nile Data Systems (demo)",
+    "country": "EG",
+    "address": {
+      "street": "Tahrir Sq",
+      "city": "Cairo"
+    },
+    "vatTreatment": "export",
+    "paymentTermsDays": 30
+  },
+  {
+    "id": "C004",
+    "name": "Walk-in individual customers",
+    "nameAr": "عملاء أفراد",
+    "country": "SA",
+    "paymentTermsDays": 0
+  }
+]

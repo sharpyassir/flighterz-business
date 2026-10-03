@@ -1,0 +1,176 @@
+[
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000005",
+    "date": "2026-02-10",
+    "time": "09:00:00",
+    "customer": "C002",
+    "lines": [
+      {
+        "description": "Progrid Cloud Business — 25 users, February 2026",
+        "quantity": 25,
+        "unitPrice": 400,
+        "discount": 500,
+        "descriptionAr": "اشتراك شهري - ٢٥ مستخدم"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000006",
+    "date": "2026-02-12",
+    "time": "14:20:00",
+    "customer": "C001",
+    "lines": [
+      {
+        "description": "Compute usage above plan — January",
+        "quantity": 1,
+        "unitPrice": 6300,
+        "account": "4200",
+        "descriptionAr": "استهلاك إضافي"
+      }
+    ]
+  },
+  {
+    "type": "credit_note",
+    "id": "PGC-CN-2026-000001",
+    "date": "2026-02-14",
+    "time": "10:00:00",
+    "customer": "C002",
+    "originalInvoice": "PGC-2026-000002",
+    "reason": "Service-level credit for outage on 2026-01-22",
+    "lines": [
+      {
+        "description": "SLA service credit",
+        "quantity": 1,
+        "unitPrice": 1000
+      }
+    ]
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-004",
+    "date": "2026-02-04",
+    "customer": "C001",
+    "amount": 155250,
+    "invoices": [
+      "PGC-2026-000001"
+    ]
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-005",
+    "date": "2026-02-15",
+    "customer": "C003",
+    "amount": 20000,
+    "bankCharges": 35
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-006",
+    "supplierInvoiceNo": "GCI-INV-79120",
+    "date": "2026-02-28",
+    "supplier": "S001",
+    "lines": [
+      {
+        "description": "Cloud hosting & compute — February 2026",
+        "amount": 29500
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-007",
+    "supplierInvoiceNo": "NT-0226-4520",
+    "date": "2026-02-26",
+    "supplier": "S003",
+    "lines": [
+      {
+        "description": "Internet & phones — February",
+        "amount": 1200
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-008",
+    "supplierInvoiceNo": "AWA-2026-12",
+    "date": "2026-02-20",
+    "supplier": "S004",
+    "lines": [
+      {
+        "description": "FY2025 statutory audit — final fee",
+        "amount": 8000
+      }
+    ]
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-002",
+    "date": "2026-02-20",
+    "supplier": "S001",
+    "amount": 28000,
+    "bills": [
+      "BILL-2026-001"
+    ]
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-003",
+    "date": "2026-02-10",
+    "supplier": "S005",
+    "amount": 25875
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-004",
+    "date": "2026-02-24",
+    "supplier": "S003",
+    "amount": 1380
+  },
+  {
+    "type": "payroll",
+    "id": "PAYROLL-2026-02",
+    "month": "2026-02",
+    "date": "2026-02-26",
+    "paid": true,
+    "adjustments": [
+      {
+        "employee": "E002",
+        "bonus": 2000
+      }
+    ]
+  },
+  {
+    "type": "journal",
+    "id": "JV-2026-001",
+    "date": "2026-02-28",
+    "memo": "Accrue February monitoring usage not yet invoiced",
+    "lines": [
+      {
+        "account": "5100",
+        "debit": 1500
+      },
+      {
+        "account": "2120",
+        "credit": 1500
+      }
+    ]
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-003",
+    "date": "2026-02-09",
+    "tax": "wht",
+    "amount": 1694.12,
+    "reference": "WHT-2026-01"
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-004",
+    "date": "2026-02-12",
+    "tax": "gosi",
+    "amount": 7718.76,
+    "reference": "GOSI-2026-01"
+  }
+]

@@ -1,0 +1,4 @@
+﻿Employee,Name,Nationality,Gross,Unpaid-leave deduction,Bonus,GOSI base,GOSI employee,GOSI employer,Other deductions,Net pay
+E001,"Employee A (Saudi, engineering)",saudi,24300.00,0.00,0.00,22500.00,2193.75,2643.75,0.00,22106.25
+E002,"Employee B (Saudi, operations)",saudi,12150.00,0.00,0.00,11250.00,1153.13,1378.13,0.00,10996.87
+E003,"Employee C (non-Saudi, engineering)",non_saudi,18900.00,0.00,0.00,17500.00,0.00,350.00,0.00,18900.00

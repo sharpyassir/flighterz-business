@@ -1,0 +1,180 @@
+{
+  "egs": {
+    "name": "Progrid-Accounting-EGS-1",
+    "serial": "1-Progrid|2-Accounting|3-34ddb6cf-0303-4f56-9a2f-3307c51ed81b"
+  },
+  "lastIcv": 10,
+  "lastHash": "EJ9Q/aMFyVyehVa/Inz8+WIhR9x4aPXKGlddwX6dTME=",
+  "invoices": {
+    "PGC-2026-000001": {
+      "id": "PGC-2026-000001",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "30322d19-af2c-46fe-9e42-003ac2109ff0",
+      "icv": 1,
+      "pih": "NWZlY2ViNjZmZmM4NmYzOGQ5NTI3ODZjNmQ2OTZjNzljMmRiYzIzOWRkNGU5MWI0NjcyOWQ3M2EyN2ZiNTdlOQ==",
+      "hash": "zGo9kiqCWQ0A2QgyFSXACfatyuEEqjcvejxgzw74thI=",
+      "issuedAt": "2026-01-28T09:00:00.000Z",
+      "fingerprint": "241c4681ac3ca90522b1c01fd6df81fe30f6ab1ef6a163b085d4ae4f885eb30e",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/01/invoices/PGC-2026-000001.xml",
+        "html": "2026/01/invoices/PGC-2026-000001.html"
+      }
+    },
+    "PGC-2026-000002": {
+      "id": "PGC-2026-000002",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "f8f9c9b4-391c-4303-b005-94e3c37bbf20",
+      "icv": 2,
+      "pih": "zGo9kiqCWQ0A2QgyFSXACfatyuEEqjcvejxgzw74thI=",
+      "hash": "mn+FSfYQtoi+4SGXwp8ytmpvGCLTQzNv31z1OmxXo9M=",
+      "issuedAt": "2026-01-28T09:00:00.000Z",
+      "fingerprint": "05c2f958373d775d413f6b1d243805bb8d62d9c8c499b8e34363cef51227ed3a",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/01/invoices/PGC-2026-000002.xml",
+        "html": "2026/01/invoices/PGC-2026-000002.html"
+      }
+    },
+    "PGC-2026-000003": {
+      "id": "PGC-2026-000003",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "61f2864d-3e56-405d-ba17-2fd687f1e390",
+      "icv": 3,
+      "pih": "mn+FSfYQtoi+4SGXwp8ytmpvGCLTQzNv31z1OmxXo9M=",
+      "hash": "u/jK69nipsTZ+JAF/JMQzCwLaXxHvnQO6NXU6OBQ4ik=",
+      "issuedAt": "2026-01-28T09:00:00.000Z",
+      "fingerprint": "0fcfe7303a2f12f2d0cd97f76ae63c6deebaec8ae2799cbecf1f0790f70b5fc6",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/01/invoices/PGC-2026-000003.xml",
+        "html": "2026/01/invoices/PGC-2026-000003.html"
+      }
+    },
+    "PGC-2026-000004": {
+      "id": "PGC-2026-000004",
+      "type": "sales_invoice",
+      "kind": "simplified",
+      "uuid": "382756cf-6dd0-4553-bcb5-524b5b5999a8",
+      "icv": 4,
+      "pih": "u/jK69nipsTZ+JAF/JMQzCwLaXxHvnQO6NXU6OBQ4ik=",
+      "hash": "qtvlfJh4yYbpunuHaw7tx6JQEHpKWqPpKMkmXlQQMdI=",
+      "issuedAt": "2026-01-28T09:00:00.000Z",
+      "fingerprint": "41422f112f85dd99113b12c9a05e2e73147053395c9386c9d9b268cc92806fe7",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/01/invoices/PGC-2026-000004.xml",
+        "html": "2026/01/invoices/PGC-2026-000004.html"
+      }
+    },
+    "PGC-2026-000005": {
+      "id": "PGC-2026-000005",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "6175f632-e1b1-4c40-a004-9379c276be20",
+      "icv": 5,
+      "pih": "qtvlfJh4yYbpunuHaw7tx6JQEHpKWqPpKMkmXlQQMdI=",
+      "hash": "HyI4fcM8y+Iktbm3szFDOJfLG/VL6qoQe2pHroZCejo=",
+      "issuedAt": "2026-02-28T09:00:00.000Z",
+      "fingerprint": "58e0e3e5bc840cece9ad48d008ec97eb03cf93b1a4b8a60ed89590adacdfa588",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/02/invoices/PGC-2026-000005.xml",
+        "html": "2026/02/invoices/PGC-2026-000005.html"
+      }
+    },
+    "PGC-2026-000006": {
+      "id": "PGC-2026-000006",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "f0c238d2-b7d4-419a-b9d5-47b4d64b8f62",
+      "icv": 6,
+      "pih": "HyI4fcM8y+Iktbm3szFDOJfLG/VL6qoQe2pHroZCejo=",
+      "hash": "wzwQ/TMfX+ENYDikbFj1YmSZxP/PZKEX7uUT6I9H8tk=",
+      "issuedAt": "2026-02-28T09:00:00.000Z",
+      "fingerprint": "433b438e45ab98f6030e039fa47df59f07555333ff17338fddfcc6de0929b0f5",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/02/invoices/PGC-2026-000006.xml",
+        "html": "2026/02/invoices/PGC-2026-000006.html"
+      }
+    },
+    "PGC-CN-2026-000001": {
+      "id": "PGC-CN-2026-000001",
+      "type": "credit_note",
+      "kind": "standard",
+      "uuid": "88ccd2ce-e192-429a-9796-9ce20cf6bbc2",
+      "icv": 7,
+      "pih": "wzwQ/TMfX+ENYDikbFj1YmSZxP/PZKEX7uUT6I9H8tk=",
+      "hash": "0IdJRXRgHxFELmNboZaYPeInwyQXtqKk1g2Wk9pUs4M=",
+      "issuedAt": "2026-02-28T09:00:00.000Z",
+      "fingerprint": "fecd37c8a4683ef7a92daacca47eb9215a22b3cb53b4d9b153d86e9b5ba83ee3",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/02/invoices/PGC-CN-2026-000001.xml",
+        "html": "2026/02/invoices/PGC-CN-2026-000001.html"
+      }
+    },
+    "PGC-2026-000007": {
+      "id": "PGC-2026-000007",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "3536e0f4-4dd7-4d16-901b-2ec3a0cc0ef0",
+      "icv": 8,
+      "pih": "0IdJRXRgHxFELmNboZaYPeInwyQXtqKk1g2Wk9pUs4M=",
+      "hash": "lJKF8e7DftIsQvCBO5SyCFaptT7pek9Uy4NIm41I2lI=",
+      "issuedAt": "2026-03-28T09:00:00.000Z",
+      "fingerprint": "10e823392e3bdd989d3c1851e03449c128d87e05cf839c9f0f4148a984669c7b",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/03/invoices/PGC-2026-000007.xml",
+        "html": "2026/03/invoices/PGC-2026-000007.html"
+      }
+    },
+    "PGC-2026-000008": {
+      "id": "PGC-2026-000008",
+      "type": "sales_invoice",
+      "kind": "simplified",
+      "uuid": "685c3a32-6273-4514-a66b-8110ddc1769c",
+      "icv": 9,
+      "pih": "lJKF8e7DftIsQvCBO5SyCFaptT7pek9Uy4NIm41I2lI=",
+      "hash": "emlqHXCH14TCh424LfC+cvpfo9j3dp3HpMtgbwPvoJo=",
+      "issuedAt": "2026-03-28T09:00:00.000Z",
+      "fingerprint": "5f0db1699804557ce8bd544088cb567f80bd01d6d67838b603041d3ebef3a548",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/03/invoices/PGC-2026-000008.xml",
+        "html": "2026/03/invoices/PGC-2026-000008.html"
+      }
+    },
+    "PGC-2026-000009": {
+      "id": "PGC-2026-000009",
+      "type": "sales_invoice",
+      "kind": "standard",
+      "uuid": "d0266083-ff15-4848-83dc-fc9570f388f5",
+      "icv": 10,
+      "pih": "emlqHXCH14TCh424LfC+cvpfo9j3dp3HpMtgbwPvoJo=",
+      "hash": "EJ9Q/aMFyVyehVa/Inz8+WIhR9x4aPXKGlddwX6dTME=",
+      "issuedAt": "2026-03-28T09:00:00.000Z",
+      "fingerprint": "29ae02ecf9380dd840233ac884e3afb4ff19491fcdc09cbaf3644b11678fbbec",
+      "signed": false,
+      "zatcaStatus": "pending_submission",
+      "files": {
+        "xml": "2026/03/invoices/PGC-2026-000009.xml",
+        "html": "2026/03/invoices/PGC-2026-000009.html"
+      }
+    }
+  }
+}

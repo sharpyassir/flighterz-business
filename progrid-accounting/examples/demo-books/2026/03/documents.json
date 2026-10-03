@@ -1,0 +1,202 @@
+[
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000007",
+    "date": "2026-03-10",
+    "time": "09:00:00",
+    "customer": "C002",
+    "lines": [
+      {
+        "description": "Progrid Cloud Business — 25 users, March 2026",
+        "quantity": 25,
+        "unitPrice": 400,
+        "discount": 500,
+        "descriptionAr": "اشتراك شهري - ٢٥ مستخدم"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000008",
+    "date": "2026-03-18",
+    "time": "13:05:00",
+    "customer": "C004",
+    "invoiceKind": "simplified",
+    "lines": [
+      {
+        "description": "Premium support pack",
+        "quantity": 2,
+        "unitPrice": 450,
+        "account": "4400",
+        "descriptionAr": "باقة الدعم المميز"
+      }
+    ]
+  },
+  {
+    "type": "sales_invoice",
+    "id": "PGC-2026-000009",
+    "date": "2026-03-20",
+    "time": "15:40:00",
+    "customer": "C001",
+    "lines": [
+      {
+        "description": "Implementation phase 2 — data migration",
+        "quantity": 1,
+        "unitPrice": 25000,
+        "account": "4300",
+        "descriptionAr": "المرحلة الثانية - ترحيل البيانات"
+      }
+    ]
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-006",
+    "date": "2026-03-05",
+    "customer": "C002",
+    "amount": 9775
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-007",
+    "date": "2026-03-12",
+    "customer": "C001",
+    "amount": 7245
+  },
+  {
+    "type": "receipt",
+    "id": "RCPT-2026-008",
+    "date": "2026-03-18",
+    "customer": "C004",
+    "amount": 1035
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-009",
+    "supplierInvoiceNo": "GCI-INV-80551",
+    "date": "2026-03-31",
+    "supplier": "S001",
+    "lines": [
+      {
+        "description": "Cloud hosting & compute — March 2026",
+        "amount": 31000
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-010",
+    "supplierInvoiceNo": "NT-0326-4633",
+    "date": "2026-03-27",
+    "supplier": "S003",
+    "lines": [
+      {
+        "description": "Internet & phones — March",
+        "amount": 1200
+      }
+    ]
+  },
+  {
+    "type": "purchase_bill",
+    "id": "BILL-2026-011",
+    "supplierInvoiceNo": "RST-8812",
+    "date": "2026-03-15",
+    "supplier": "S005",
+    "paidFrom": "1110",
+    "lines": [
+      {
+        "description": "Team dinner — client workshop",
+        "amount": 1400,
+        "account": "6990",
+        "vatRecoverable": false
+      }
+    ]
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-005",
+    "date": "2026-03-20",
+    "supplier": "S001",
+    "amount": 29500,
+    "bills": [
+      "BILL-2026-006"
+    ]
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-006",
+    "date": "2026-03-24",
+    "supplier": "S003",
+    "amount": 1380
+  },
+  {
+    "type": "payment",
+    "id": "PAY-2026-007",
+    "date": "2026-03-15",
+    "supplier": "S004",
+    "amount": 9200
+  },
+  {
+    "type": "payroll",
+    "id": "PAYROLL-2026-03",
+    "month": "2026-03",
+    "date": "2026-03-26",
+    "paid": true
+  },
+  {
+    "type": "transfer",
+    "id": "TRF-2026-002",
+    "date": "2026-03-01",
+    "from": "1120",
+    "to": "1110",
+    "amount": 3000,
+    "memo": "Petty cash float"
+  },
+  {
+    "type": "journal",
+    "id": "JV-2026-002",
+    "date": "2026-03-01",
+    "memo": "Reverse February usage accrual",
+    "lines": [
+      {
+        "account": "2120",
+        "debit": 1500
+      },
+      {
+        "account": "5100",
+        "credit": 1500
+      }
+    ]
+  },
+  {
+    "type": "journal",
+    "id": "JV-2026-003",
+    "date": "2026-03-31",
+    "memo": "Accrue March monitoring usage not yet invoiced",
+    "lines": [
+      {
+        "account": "5100",
+        "debit": 1650
+      },
+      {
+        "account": "2120",
+        "credit": 1650
+      }
+    ]
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-005",
+    "date": "2026-03-09",
+    "tax": "wht",
+    "amount": 4200,
+    "reference": "WHT-2026-02"
+  },
+  {
+    "type": "tax_payment",
+    "id": "TAX-2026-006",
+    "date": "2026-03-12",
+    "tax": "gosi",
+    "amount": 7918.76,
+    "reference": "GOSI-2026-02"
+  }
+]

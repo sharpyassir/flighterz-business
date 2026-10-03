@@ -1,0 +1,23 @@
+{
+  "_todo": "Replace every value marked TODO with Progrid Cloud's real details (from the CR certificate, VAT certificate and national address). The books will not run until vatNumber is valid.",
+  "legalNameEn": "TODO Progrid Cloud — legal name exactly as on the CR",
+  "legalNameAr": "TODO الاسم التجاري بالعربية كما في السجل التجاري",
+  "vatNumber": "TODO-15-digit-VAT-number",
+  "crNumber": "TODO",
+  "address": {
+    "street": "TODO",
+    "buildingNumber": "0000",
+    "additionalNumber": "0000",
+    "district": "TODO",
+    "city": "Riyadh",
+    "postalCode": "00000",
+    "country": "SA"
+  },
+  "fiscalYearStartMonth": 1,
+  "vatFilingFrequency": "quarterly",
+  "saudiGccOwnershipPercent": 100,
+  "invoicePrefix": "PGC",
+  "issueZatcaInvoices": false,
+  "defaultBankAccount": "1120",
+  "booksStartDate": "2026-01-01"
+}

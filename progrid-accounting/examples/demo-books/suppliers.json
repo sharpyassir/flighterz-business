@@ -1,0 +1,51 @@
+[
+  {
+    "id": "S001",
+    "name": "Global Cloud Infrastructure Ltd (demo, IE)",
+    "country": "IE",
+    "resident": false,
+    "defaultAccount": "5100",
+    "whtCategory": "other_services",
+    "paymentTermsDays": 20
+  },
+  {
+    "id": "S002",
+    "name": "Riyadh Office Spaces Co. (demo)",
+    "vatNumber": "300000000000003",
+    "country": "SA",
+    "resident": true,
+    "defaultAccount": "6200"
+  },
+  {
+    "id": "S003",
+    "name": "Najd Telecom Co. (demo)",
+    "vatNumber": "301111111100003",
+    "country": "SA",
+    "resident": true,
+    "defaultAccount": "6210"
+  },
+  {
+    "id": "S004",
+    "name": "Al Waha Audit & Advisory (demo)",
+    "vatNumber": "302222222200003",
+    "country": "SA",
+    "resident": true,
+    "defaultAccount": "6300"
+  },
+  {
+    "id": "S005",
+    "name": "Tech Store KSA (demo)",
+    "vatNumber": "303333333300003",
+    "country": "SA",
+    "resident": true,
+    "defaultAccount": "6610"
+  },
+  {
+    "id": "S006",
+    "name": "DevTools Inc. (demo, US)",
+    "country": "US",
+    "resident": false,
+    "defaultAccount": "6600",
+    "whtCategory": "royalties"
+  }
+]

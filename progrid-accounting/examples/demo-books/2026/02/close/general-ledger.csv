@@ -1,0 +1,91 @@
+﻿Account,Name,Date,Entry,Source,Memo,Party,Debit,Credit,Running balance
+1120,Bank — SAR current account,2026-02-01,,,Opening balance,,,,770491.88
+1120,Bank — SAR current account,2026-02-04,JE-202602-00022,RCPT-2026-004,Receipt from Al Noor Logistics Co. (demo),,155250.00,0.00,925741.88
+1120,Bank — SAR current account,2026-02-09,JE-202602-00023,TAX-2026-003,WHT payment (SADAD WHT-2026-01),,0.00,1694.12,924047.76
+1120,Bank — SAR current account,2026-02-10,JE-202602-00025,PAY-2026-003,Payment to Tech Store KSA (demo),,0.00,25875.00,898172.76
+1120,Bank — SAR current account,2026-02-12,JE-202602-00027,TAX-2026-004,GOSI payment (SADAD GOSI-2026-01),,0.00,7718.76,890454.00
+1120,Bank — SAR current account,2026-02-15,JE-202602-00029,RCPT-2026-005,Receipt from Nile Data Systems (demo),,19965.00,0.00,910419.00
+1120,Bank — SAR current account,2026-02-20,JE-202602-00031,PAY-2026-002,"Payment to Global Cloud Infrastructure Ltd (demo, IE)",,0.00,23800.00,886619.00
+1120,Bank — SAR current account,2026-02-24,JE-202602-00032,PAY-2026-004,Payment to Najd Telecom Co. (demo),,0.00,1380.00,885239.00
+1120,Bank — SAR current account,2026-02-26,JE-202602-00034,PAYROLL-2026-02,Net pay,,0.00,59403.12,825835.88
+1210,Trade receivables,2026-02-01,,,Opening balance,,,,175250.00
+1210,Trade receivables,2026-02-04,JE-202602-00022,RCPT-2026-004,Receipt from Al Noor Logistics Co. (demo),C001,0.00,155250.00,20000.00
+1210,Trade receivables,2026-02-10,JE-202602-00024,PGC-2026-000005,Sales invoice PGC-2026-000005 — Gulf Retail Group (demo),C002,10925.00,0.00,30925.00
+1210,Trade receivables,2026-02-12,JE-202602-00026,PGC-2026-000006,Sales invoice PGC-2026-000006 — Al Noor Logistics Co. (demo),C001,7245.00,0.00,38170.00
+1210,Trade receivables,2026-02-14,JE-202602-00028,PGC-CN-2026-000001,Credit note PGC-CN-2026-000001 on PGC-2026-000002 — Service-level credit for outage on 2026-01-22,C002,0.00,1150.00,37020.00
+1210,Trade receivables,2026-02-15,JE-202602-00029,RCPT-2026-005,Receipt from Nile Data Systems (demo),C003,0.00,20000.00,17020.00
+1310,Prepaid expenses,2026-02-01,,,Opening balance,,,,38284.65
+1310,Prepaid expenses,2026-02-28,JE-202602-00037,auto:prepaid:BILL-2026-002,Prepaid expense released — Office rent Q1 2026 (BILL-2026-002),S002,0.00,14000.00,24284.65
+1310,Prepaid expenses,2026-02-28,JE-202602-00039,auto:prepaid:BILL-2026-004,Prepaid expense released — CI/CD platform licence — 2026 (BILL-2026-004),S006,0.00,736.44,23548.21
+1410,Input VAT — recoverable,2026-02-01,,,Opening balance,,,,10305.00
+1410,Input VAT — recoverable,2026-02-20,JE-202602-00030,BILL-2026-008,Bill AWA-2026-12 — Al Waha Audit & Advisory (demo),,1200.00,0.00,11505.00
+1410,Input VAT — recoverable,2026-02-26,JE-202602-00033,BILL-2026-007,Bill NT-0226-4520 — Najd Telecom Co. (demo),,180.00,0.00,11685.00
+1415,Input VAT — reverse charge,2026-02-01,,,Opening balance,,,,5640.00
+1415,Input VAT — reverse charge,2026-02-28,JE-202602-00035,BILL-2026-006,"Bill GCI-INV-79120 — Global Cloud Infrastructure Ltd (demo, IE)",,4425.00,0.00,10065.00
+1510,Computer & network equipment,2026-02-01,,,Opening balance,,,,82500.00
+1515,Accumulated depreciation — computers,2026-02-01,,,Opening balance,,,,-21666.67
+1515,Accumulated depreciation — computers,2026-02-28,JE-202602-00040,auto:depreciation,computers,,0.00,2291.67,-23958.34
+2110,Trade payables,2026-02-01,,,Opening balance,,,,-55255.00
+2110,Trade payables,2026-02-10,JE-202602-00025,PAY-2026-003,Payment to Tech Store KSA (demo),S005,25875.00,0.00,-29380.00
+2110,Trade payables,2026-02-20,JE-202602-00030,BILL-2026-008,Bill AWA-2026-12 — Al Waha Audit & Advisory (demo),S004,0.00,9200.00,-38580.00
+2110,Trade payables,2026-02-20,JE-202602-00031,PAY-2026-002,"Payment to Global Cloud Infrastructure Ltd (demo, IE)",S001,28000.00,0.00,-10580.00
+2110,Trade payables,2026-02-24,JE-202602-00032,PAY-2026-004,Payment to Najd Telecom Co. (demo),S003,1380.00,0.00,-9200.00
+2110,Trade payables,2026-02-26,JE-202602-00033,BILL-2026-007,Bill NT-0226-4520 — Najd Telecom Co. (demo),S003,0.00,1380.00,-10580.00
+2110,Trade payables,2026-02-28,JE-202602-00035,BILL-2026-006,"Bill GCI-INV-79120 — Global Cloud Infrastructure Ltd (demo, IE)",S001,0.00,29500.00,-40080.00
+2120,Accrued expenses,2026-02-01,,,Opening balance,,,,0.00
+2120,Accrued expenses,2026-02-28,JE-202602-00036,JV-2026-001,Accrue February monitoring usage not yet invoiced,,0.00,1500.00,-1500.00
+2210,Output VAT,2026-02-01,,,Opening balance,,,,-21795.00
+2210,Output VAT,2026-02-10,JE-202602-00024,PGC-2026-000005,Sales invoice PGC-2026-000005 — Gulf Retail Group (demo),,0.00,1425.00,-23220.00
+2210,Output VAT,2026-02-12,JE-202602-00026,PGC-2026-000006,Sales invoice PGC-2026-000006 — Al Noor Logistics Co. (demo),,0.00,945.00,-24165.00
+2210,Output VAT,2026-02-14,JE-202602-00028,PGC-CN-2026-000001,Credit note PGC-CN-2026-000001 on PGC-2026-000002 — Service-level credit for outage on 2026-01-22,,150.00,0.00,-24015.00
+2215,Output VAT — reverse charge,2026-02-01,,,Opening balance,,,,-5640.00
+2215,Output VAT — reverse charge,2026-02-28,JE-202602-00035,BILL-2026-006,"Bill GCI-INV-79120 — Global Cloud Infrastructure Ltd (demo, IE)",,0.00,4425.00,-10065.00
+2230,Withholding tax payable,2026-02-01,,,Opening balance,,,,-1694.12
+2230,Withholding tax payable,2026-02-09,JE-202602-00023,TAX-2026-003,WHT payment (SADAD WHT-2026-01),,1694.12,0.00,0.00
+2230,Withholding tax payable,2026-02-20,JE-202602-00031,PAY-2026-002,"Payment to Global Cloud Infrastructure Ltd (demo, IE)",S001,0.00,4200.00,-4200.00
+2240,Zakat / income tax payable,2026-02-01,,,Opening balance,,,,-1714.29
+2240,Zakat / income tax payable,2026-02-28,JE-202602-00042,auto:zakat,Zakat accrual 2026-02 (2/12 of estimate),,0.00,1292.03,-3006.32
+2320,GOSI payable,2026-02-01,,,Opening balance,,,,-7718.76
+2320,GOSI payable,2026-02-12,JE-202602-00027,TAX-2026-004,GOSI payment (SADAD GOSI-2026-01),,7718.76,0.00,0.00
+2320,GOSI payable,2026-02-26,JE-202602-00034,PAYROLL-2026-02,GOSI employer + employee,,0.00,7918.76,-7918.76
+2410,Deferred revenue (contract liabilities),2026-02-01,,,Opening balance,,,,-109808.22
+2410,Deferred revenue (contract liabilities),2026-02-28,JE-202602-00038,auto:revrec:PGC-2026-000001,Revenue recognised — Progrid Cloud Enterprise — annual subscription 2026 (PGC-2026-000001),C001,9205.48,0.00,-100602.74
+2610,End-of-service benefits provision,2026-02-01,,,Opening balance,,,,-72404.72
+2610,End-of-service benefits provision,2026-02-28,JE-202602-00041,auto:eosb,End-of-service benefits accrual 2026-02,,0.00,2328.54,-74733.26
+3100,Share capital,2026-02-01,,,Opening balance,,,,-500000.00
+3300,Retained earnings,2026-02-01,,,Opening balance,,,,-341944.14
+4100,Subscription revenue (SaaS),2026-02-01,,,Opening balance,,,,-19691.78
+4100,Subscription revenue (SaaS),2026-02-10,JE-202602-00024,PGC-2026-000005,"Progrid Cloud Business — 25 users, February 2026",C002,0.00,9500.00,-29191.78
+4100,Subscription revenue (SaaS),2026-02-28,JE-202602-00038,auto:revrec:PGC-2026-000001,Revenue recognised — Progrid Cloud Enterprise — annual subscription 2026 (PGC-2026-000001),C001,0.00,9205.48,-38397.26
+4200,Usage / consumption revenue,2026-02-01,,,Opening balance,,,,0.00
+4200,Usage / consumption revenue,2026-02-12,JE-202602-00026,PGC-2026-000006,Compute usage above plan — January,C001,0.00,6300.00,-6300.00
+4300,Implementation & professional services,2026-02-01,,,Opening balance,,,,-35000.00
+4400,Support & maintenance revenue,2026-02-01,,,Opening balance,,,,-800.00
+4500,Sales returns & discounts,2026-02-01,,,Opening balance,,,,0.00
+4500,Sales returns & discounts,2026-02-14,JE-202602-00028,PGC-CN-2026-000001,SLA service credit,C002,1000.00,0.00,1000.00
+5100,Cloud hosting & infrastructure,2026-02-01,,,Opening balance,,,,28000.00
+5100,Cloud hosting & infrastructure,2026-02-28,JE-202602-00035,BILL-2026-006,Cloud hosting & compute — February 2026,S001,29500.00,0.00,57500.00
+5100,Cloud hosting & infrastructure,2026-02-28,JE-202602-00036,JV-2026-001,Accrue February monitoring usage not yet invoiced,,1500.00,0.00,59000.00
+5300,Direct staff costs,2026-02-01,,,Opening balance,,,,43200.00
+5300,Direct staff costs,2026-02-26,JE-202602-00034,PAYROLL-2026-02,Gross pay — delivery/engineering,,43200.00,0.00,86400.00
+6100,Salaries & wages,2026-02-01,,,Opening balance,,,,12150.00
+6100,Salaries & wages,2026-02-26,JE-202602-00034,PAYROLL-2026-02,Gross pay — operations,,19550.00,0.00,31700.00
+6130,GOSI — employer contribution,2026-02-01,,,Opening balance,,,,4371.88
+6130,GOSI — employer contribution,2026-02-26,JE-202602-00034,PAYROLL-2026-02,GOSI employer share,,4571.88,0.00,8943.76
+6140,End-of-service benefits expense,2026-02-01,,,Opening balance,,,,2348.86
+6140,End-of-service benefits expense,2026-02-28,JE-202602-00041,auto:eosb,End-of-service benefits accrual 2026-02,,2328.54,0.00,4677.40
+6200,Rent,2026-02-01,,,Opening balance,,,,15500.00
+6200,Rent,2026-02-28,JE-202602-00037,auto:prepaid:BILL-2026-002,Prepaid expense released — Office rent Q1 2026 (BILL-2026-002),S002,14000.00,0.00,29500.00
+6210,Utilities & telecommunications,2026-02-01,,,Opening balance,,,,1200.00
+6210,Utilities & telecommunications,2026-02-26,JE-202602-00033,BILL-2026-007,Internet & phones — February,S003,1200.00,0.00,2400.00
+6300,"Audit, legal & professional fees",2026-02-01,,,Opening balance,,,,0.00
+6300,"Audit, legal & professional fees",2026-02-20,JE-202602-00030,BILL-2026-008,FY2025 statutory audit — final fee,S004,8000.00,0.00,8000.00
+6600,Internal software subscriptions,2026-02-01,,,Opening balance,,,,815.35
+6600,Internal software subscriptions,2026-02-28,JE-202602-00039,auto:prepaid:BILL-2026-004,Prepaid expense released — CI/CD platform licence — 2026 (BILL-2026-004),S006,736.44,0.00,1551.79
+6700,Depreciation,2026-02-01,,,Opening balance,,,,1666.67
+6700,Depreciation,2026-02-28,JE-202602-00040,auto:depreciation,computers,,2291.67,0.00,3958.34
+6800,Bank charges,2026-02-01,,,Opening balance,,,,0.00
+6800,Bank charges,2026-02-15,JE-202602-00029,RCPT-2026-005,Receipt from Nile Data Systems (demo),,35.00,0.00,35.00
+6910,Withholding tax borne,2026-02-01,,,Opening balance,,,,1694.12
+7100,Zakat,2026-02-01,,,Opening balance,,,,1714.29
+7100,Zakat,2026-02-28,JE-202602-00042,auto:zakat,Zakat accrual 2026-02 (2/12 of estimate),,1292.03,0.00,3006.32

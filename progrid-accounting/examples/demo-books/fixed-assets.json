@@ -1,0 +1,12 @@
+[
+  {
+    "id": "FA-0001",
+    "description": "Servers & network gear (pre-2026)",
+    "assetClass": "computers",
+    "cost": 60000,
+    "acquisitionDate": "2024-12-01",
+    "usefulLifeMonths": 36,
+    "accumulatedDepreciation": 20000,
+    "remainingLifeMonths": 24
+  }
+]

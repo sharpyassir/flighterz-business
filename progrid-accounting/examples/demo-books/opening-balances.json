@@ -1,0 +1,70 @@
+{
+  "date": "2025-12-31",
+  "lines": [
+    {
+      "account": "1120",
+      "debit": 850000,
+      "memo": "Bank per 31 Dec 2025 statement"
+    },
+    {
+      "account": "1210",
+      "debit": 57500,
+      "party": "C001",
+      "memo": "INV-2025-0412"
+    },
+    {
+      "account": "1510",
+      "debit": 60000
+    },
+    {
+      "account": "1515",
+      "credit": 20000
+    },
+    {
+      "account": "2110",
+      "credit": 11500,
+      "party": "S004"
+    },
+    {
+      "account": "2220",
+      "credit": 18000,
+      "memo": "VAT Q4 2025"
+    },
+    {
+      "account": "2320",
+      "credit": 6000,
+      "memo": "GOSI Dec 2025"
+    },
+    {
+      "account": "2610",
+      "credit": 70055.86,
+      "memo": "EOSB per Labour Law Art. 84 at 31 Dec 2025"
+    },
+    {
+      "account": "3100",
+      "credit": 500000
+    },
+    {
+      "account": "3300",
+      "credit": 341944.14
+    }
+  ],
+  "openItems": [
+    {
+      "kind": "ar",
+      "party": "C001",
+      "ref": "INV-2025-0412",
+      "date": "2025-12-15",
+      "dueDate": "2026-01-14",
+      "amount": 57500
+    },
+    {
+      "kind": "ap",
+      "party": "S004",
+      "ref": "AWA-2025-88",
+      "date": "2025-12-20",
+      "dueDate": "2026-01-19",
+      "amount": 11500
+    }
+  ]
+}

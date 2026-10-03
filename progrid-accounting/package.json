@@ -1,0 +1,22 @@
+{
+  "name": "progrid-accounting",
+  "version": "1.0.0",
+  "description": "Progrid Cloud — double-entry bookkeeping, monthly close, VAT/WHT/Zakat and ZATCA e-invoicing (KSA).",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "acc": "node src/cli.ts",
+    "test": "node --test test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "demo": "node src/cli.ts demo"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.9.0"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "period": "2026-01",
+  "status": "open",
+  "revenue": 5549178,
+  "netProfit": -5716939,
+  "netProfitYtd": -5716939,
+  "cash": 77049188,
+  "receivables": 17525000,
+  "payables": 5525500,
+  "vatPayable": 1149000,
+  "checks": [
+    {
+      "name": "Trial balance balances",
+      "ok": true,
+      "detail": "Dr 1,195,132.70 / Cr 1,195,132.70"
+    },
+    {
+      "name": "Balance sheet balances",
+      "ok": true,
+      "detail": "Assets 1,060,804.86 / L+E 1,060,804.86"
+    },
+    {
+      "name": "Cash flow reconciles to cash",
+      "ok": true
+    },
+    {
+      "name": "AR sub-ledger = control account",
+      "ok": true,
+      "detail": "aging 175,250.00 vs GL 175,250.00"
+    },
+    {
+      "name": "AP sub-ledger = control account",
+      "ok": true,
+      "detail": "aging 55,255.00 vs GL 55,255.00"
+    },
+    {
+      "name": "Bank reconciliation 1120",
+      "ok": true,
+      "detail": "statement 770,491.88 vs ledger 770,491.88"
+    }
+  ],
+  "warnings": [],
+  "journalHash": "1177e05cbfbce18d433d19549c9fead8c0ba66b09846003390c35565187a7844"
+}
